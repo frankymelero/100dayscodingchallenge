@@ -1,5 +1,17 @@
 # 100 days coding challenge
 
+## Reto de programación, día 3/100.
+
+Continuamos con el reto. Ayer me propusieron una serie de ejercicios para incluirlos en el repo. Para mi sorpresa, han sido bastante fáciles y en un par de horas, he podido acabarlos todos. 
+
+Considerando la dificultad, voy a hacer ejercicios algo más avanzados que me puedan aportar cosas nuevas. Aunque de momento, iré completando y subiendo cada uno de los ejercicios que suba diariamente Codr. 
+
+Mi intención, también era maquetar desde cero una plantilla creada en HTML + CSS + JS. La idea era rehacer la plantilla con un framework actual, en concreto Nuxtjs. En este caso, la plantilla contiene funcionalidades que no están implementadas, tan solo está el diseño hecho, por lo que voy a hacerlas funcionar valgase la redundancia.
+
+A partir de mañana, podréis ver una primera versión subida este repositorio de GitHub.
+
+Keep coding, and be happy!
+
 
 
 ## Reto de programación, día 2/100.
