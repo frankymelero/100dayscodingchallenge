@@ -13,16 +13,16 @@ Ten en cuenta que enviar el formulario en la vista de tu navegador o en la vista
 Solo necesitas escribir el HTML que iría dentro de la etiqueta <body> del documento; no es necesario preocuparse por la etiqueta <head>, la etiqueta <html> ni la declaración <!DOCTYPE>." -->
     
     
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio1</title>
-</head>
-<body>
-    <div id="formulario-wrapper"></div>
-    
-    
-</body>
-</html>
+    <div id="formulario-wrapper">
+         <form action="" method="post">
+            <label for="username">Username: </label><input type="text" placeholder="Enter your username" required><br/>
+            <label for="username">Password: </label><input type="password" placeholder="Enter your password" required><br/>
+            <label for="username">E-mail: </label><input type="email" placeholder="Enter your e-mail" required><br/>
+            <!-- La expresión regular puede variar en función de lo deseado... En este caso tomo referencia un telefono de España.-->
+            <label for="username">Telephone Number: </label><input type="tel" placeholder="Enter your telephone" pattern="[0-9]{9}"><br/> 
+            <label for="username">Birth date: </label><input type="date" placeholder="Enter your username"><br/>
+            <label for="username">I agree to the TOS </label><input type="checkbox" required><br/>
+            <input type="submit" value="Sign up">
+        </form>
+    </div>
+   
