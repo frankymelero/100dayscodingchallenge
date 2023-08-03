@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+            background-color: grey;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        #wrapper{
+            background-color: #02203c;
+            display: flex;
+            width: 220px;
+            height: 100px;
+            
+        }
+        #logo{
+            display: flex;
+            align-items: center; 
+        }
+        h1{
+            font-size:40px;
+            color:white;
+            margin-left: 105px;
+            font-family: "Courier New", monospace;
+        }
+        #center-circle{
+            width: 10px;
+            height: 10px;
+            border: 5px solid white;
+            position: absolute;
+            border-radius: 50%;
+            margin-left: 45px;
+
+        }
+        #first-ring{
+            width: 100px;
+            height: 30px;
+            border: 5px solid white;
+            position: absolute;
+            border-radius: 50%;
+            transform: rotate(-0.38turn);
+        }
+        #second-ring{
+            width: 100px;
+            height: 30px;
+            border: 5px solid white;
+            position: absolute;
+            border-radius: 50%;
+            transform: rotate(0.38turn);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="logo"><span id="first-ring"></span><span id="center-circle"></span><span id="second-ring"></span></div>
+        <h1>Codr</h1>
+        </div>
+</body>
+</html>
