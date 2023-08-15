@@ -26,7 +26,7 @@ Después de ajustar varios detalles en cada uno de los componentes, ya tenemos e
 
 ![Snap 3 plantilla SPA](/imagenes-readme/captura3.JPG)
 
-Lo único que diferencia el componente entre páginas, es el contenido y el hipervínculo. Podremos solucionarlo más para adelante haciendo el uso de props. Crearemos un componente, donde recoja los datos que le pasemos para cada una de las páginas, y llamaremos al mismo en cada una de las páginas, enviándole la información personalizada. De esta forma, con tan solo un componente padre, podremos mostrar una variante del mismo componente, con un contenido diferente en cada una de las páginas.
+Lo único que diferencia el componente entre páginas, es el contenido y el hipervínculo. Podremos solucionarlo más para adelante haciendo el uso de props. Crearemos un componente, donde recoja los datos que le pasemos para cada una de las páginas, y llamaremos al mismo en cada una de las páginas, enviándole la información personalizada. De esta forma, con tan solo un componente padre, podremos mostrar una variante del mismo, con un contenido diferente para cada una de las páginas.
 
 ¡Seguimos!
 
