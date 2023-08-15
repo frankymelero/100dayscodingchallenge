@@ -1,8 +1,34 @@
 # 100 days coding challenge
-
 ## Reto de programación, día 10/100.
 
+Ya llegamos al décimo día desde que empezó el reto de programación. Hoy toca continuar con la plantilla. 
 
+Durante el día de hoy, he creado una estructura desde cero en Nuxt, y he separado las diferentes secciones de la web en componentes, ya que el patrón de construcción de la web se repite. A pesar que el contenido podría mejorarse, e incluso las secciones de la web pueden llegar a carecer de sentido en algunas partes, la intención principal de este trabajo es hacer una migración exacta, y añadirle funcionalidad a las partes que lo requieran. 
+
+Tras separar las diferentes páginas en componentes, pasamos de tener un index con 650 lineas de código, a un index que llama a otros componentes de forma mucho más ordenada:
+
+```
+<template>
+
+  <Carousel></Carousel>
+  <About></About>
+  <Service></Service>
+  <OpenHours></OpenHours>
+  <Pricing></Pricing>
+  <Team></Team>
+  <Testimonial></Testimonial>
+  
+</template>
+
+```
+
+Después de ajustar varios detalles en cada uno de los componentes, ya tenemos el indice montado. En este caso, en la plantilla vienen preprogramadas 9 páginas diferentes dónde el contenido se repite. Solo hay un componente que es distinto para cada página:
+
+![Snap 3 plantilla SPA](/imagenes-readme/captura3.JPG)
+
+Lo único que diferencia el componente entre páginas, es el contenido y el hipervínculo. Podremos solucionarlo más para adelante haciendo el uso de props. Crearemos un componente, donde recoja los datos que le pasemos para cada una de las páginas, y llamaremos al mismo en cada una de las páginas, enviándole la información personalizada. De esta forma, con tan solo un componente padre, podremos mostrar una variante del mismo componente, con un contenido diferente en cada una de las páginas.
+
+¡Seguimos!
 
 ## Reto de programación, día 9/100.
 
