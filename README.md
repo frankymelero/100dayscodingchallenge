@@ -1,11 +1,30 @@
 # 100 days coding challenge
+
+## Reto de programación, día 11/100.
+
+Hoy es día de ajustar detalles de la plantilla. Empezamos el día instalando los íconos de fontawesome tal y como estaban en la plantilla original. He creado una carpeta plugins dónde definir cada una de las funcionalidades de manera encapsulada, para luego importarlas en los componentes que lo requieran. En este caso, el nombre del archivo creado es "fontawesome.js". He importado todos los íconos tanto de solid, como de brands directamente desde el este archivo, y exportado como nuxt plugin, realizando su el cambio correspondiente en el nuxt.config.ts. Después de una ligera modificación en la forma de llamar a la librería, los íconos han sido añadidos tal y como vienen en la plantilla:
+
+![Snap 4 plantilla SPA](/imagenes-readme/captura4.JPG)
+
+![Snap 5 plantilla SPA](/imagenes-readme/captura5.JPG)
+
+De serie, un contador estaba pre-programado para hacer cambiar los datos en about us:
+
+![Snap 6 plantilla SPA](/imagenes-readme/captura6.JPG)
+
+El efecto se carga una vez la página ha cargado, y va desde el 0 al 99 y del 0 al 999. Aunque creo que sería mejor triggearlo cuando se haga scroll, he decidido crear el efecto cuando el componente se monte, tal y como está en la plantilla. Para esto, en lugar de utilizar el script que viene de serie, he creado un script propio que hace lo mismo, adaptado al framework que estoy utilizando. 
+
+Quedará arreglar el dropdown en el hover del menú, ajustar los dos caruseles y varios pequeños detalles de los componentes.
+
+Seguimos para bingo!
+
 ## Reto de programación, día 10/100.
 
 Ya llegamos al décimo día desde que empezó el reto de programación. Hoy toca continuar con la plantilla. 
 
-Durante el día de hoy, he creado una estructura desde cero en Nuxt, y he separado las diferentes secciones de la web en componentes, ya que el patrón de construcción de la web se repite. A pesar que el contenido podría mejorarse, e incluso las secciones de la web pueden llegar a carecer de sentido en algunas partes, la intención principal de este trabajo es hacer una migración exacta, y añadirle funcionalidad a las partes que lo requieran. 
+Ayer creamos la estructura, y cargamos la plantilla el proyecto Nuxt. Aunque hay varias funcionalidades que tendremos que importar, la página quedó ya presentada para empezar a trabajar con ella. Hoy he separado las diferentes secciones de la web en componentes, ya que el patrón de construcción de la web se repite, y quiero evitar repetir código. Por otro lado, a pesar que el contenido podría mejorarse, e incluso la estructura de la página podría llegar a carecer de sentido ben algunas partes, la intención principal de este trabajo es hacer una migración exacta, y añadirle la funcionalidades no implementadas a las partes que lo requieran. 
 
-Tras separar las diferentes páginas en componentes, pasamos de tener un index con 650 lineas de código, a un index que llama a otros componentes de forma mucho más ordenada:
+Después de separar las diferentes páginas en componentes, pasamos de tener un index con 650 lineas de código, a un index que llama a otros componentes de forma mucho más ordenada:
 
 ```
 <template>
@@ -22,17 +41,19 @@ Tras separar las diferentes páginas en componentes, pasamos de tener un index c
 
 ```
 
-Después de ajustar varios detalles en cada uno de los componentes, ya tenemos el indice montado. En este caso, en la plantilla vienen preprogramadas 9 páginas diferentes dónde el contenido se repite. Solo hay un componente que es distinto para cada página:
+Después de ajustar varios detalles en cada uno de los componentes, ya tenemos el índice montado. En este caso, en la plantilla vienen preprogramadas 9 páginas diferentes dónde el contenido se repite. Solo hay un componente que es distinto para cada página:
 
 ![Snap 3 plantilla SPA](/imagenes-readme/captura3.JPG)
 
-Lo único que diferencia el componente entre páginas, es el contenido y el hipervínculo. Podremos solucionarlo más para adelante haciendo el uso de props. Crearemos un componente, donde recoja los datos que le pasemos para cada una de las páginas, y llamaremos al mismo en cada una de las páginas, enviándole la información personalizada. De esta forma, con tan solo un componente padre, podremos mostrar una variante del mismo, con un contenido diferente para cada una de las páginas.
+Lo único que diferencia el componente entre páginas, es el contenido y el hipervínculo. Podremos solucionarlo más adelante haciendo el uso de props. Crearemos un componente, donde recoja los datos que le pasemos, para llamarlo posteriormente en cada una de las páginas enviándole la información personalizada. De esta forma, con tan solo un componente padre, podremos mostrar una variante del mismo, con un contenido diferente para cada una de las páginas.
 
-¡Seguimos!
+Quedan varias funcionalidades pré programadas en la plantilla por implementar. Mi intención es que mi versión llegue a parecerse lo máximo posible a la original, por lo que tendré que acabar de ajustar componente por componente los scripts de la plantilla.
+
+¡Mañana más, seguimos!
 
 ## Reto de programación, día 9/100.
 
-Comenzamos el noveno día del reto, hoy toca plantear y empezar a convertir una plantilla que he seleccionado a Nuxt. En concreto, trabajaré con una plantilla de un SPA. Actualmente, solo tiene html y css, por lo que es necesario implementar todas las funcionalidades necesarias para que la plantilla funcione  (valgase la redundancia). A continuación podréis ver unos recortes de la plantilla antes de realizar ningún cambio:
+Comenzamos el noveno día del reto, hoy toca plantear y empezar a convertir una plantilla que he seleccionado a Nuxt. En concreto, trabajaré con una plantilla de un SPA. Originalmente, la plantilla está programada utilizando html, bootstrap y js, por lo que es necesario implementar todas las funcionalidades necesarias para que la plantilla funcione  (valgase la redundancia). A continuación podréis ver unos recortes de la plantilla antes de realizar ningún cambio:
 
 ![Snap 1 plantilla SPA](/imagenes-readme/captura1.JPG)
 
@@ -44,8 +65,6 @@ En este caso, quiero modificar la parte de realizar una cita de forma que despli
  Para ello, utilizaré Nuxt como framework en el front-end, y una funcionalidad de Vercel que te permite conectar un back-end serverless. Para enviar los e-mails, en lugar de utilizar un servidor SMTP, haré uso de una de las tantas plataformas que te permiten enviar e-mails con un límite, considerando el propósito del proyecto.
 
  Keep coding, keep enyoing :) 
-
-
 
 ## Reto de programación, día 8/100.
 

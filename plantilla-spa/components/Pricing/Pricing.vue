@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="../static/assets/img/pricing.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="../../static/assets/img/pricing.jpg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-7 pt-5 pb-lg-5">

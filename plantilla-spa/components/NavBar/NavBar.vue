@@ -1,34 +1,41 @@
+
 <template>
 
      <!-- Topbar Start -->
- <div class="container-fluid bg-light d-none d-lg-block">
+     <div class="container-fluid bg-light d-none d-lg-block">
     <div class="row py-2 px-lg-5">
-        <div class="col-lg-6 text-left mb-2 mb-lg-0">
-            <div class="d-inline-flex align-items-center">
-                <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
-                <small class="px-3">|</small>
-                <small><i class="fa fa-envelope mr-2"></i>info@example.com</small>
-            </div>
+      <div class="col-lg-6 text-left mb-2 mb-lg-0">
+        <div class="d-inline-flex align-items-center">
+   
+            <small> <font-awesome-icon icon="phone" class="mr-2" /></small>
+            <small>+34 616123123</small>
+          <small class="px-3">|</small>
+         
+           <small><font-awesome-icon icon="envelope" class="mr-2" /></small> 
+      
+            <small>info@fmgdev.com</small>
+          
         </div>
-        <div class="col-lg-6 text-right">
-            <div class="d-inline-flex align-items-center">
-                <a class="text-primary px-2" href="">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a class="text-primary px-2" href="">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a class="text-primary px-2" href="">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a class="text-primary px-2" href="">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a class="text-primary pl-2" href="">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-        </div>
+      </div>
+      <div class="col-lg-6 text-right">
+    <div class="d-inline-flex align-items-center">
+      <a class="text-primary px-2" href="#">
+      <font-awesome-icon icon="fa-brands fa-facebook-f" class="fab" />
+      </a>
+      <a class="text-primary px-2" href="#">
+        <font-awesome-icon icon="fa-brands fa-twitter" class="fab" />
+      </a>
+      <a class="text-primary px-2" href="#">
+      <font-awesome-icon icon="fa-brands fa-linkedin" class="fab" />
+      </a>
+       <a class="text-primary px-2" href="#">
+        <font-awesome-icon icon="fa-brands fa-instagram" class="fab" />
+      </a>
+      <a class="text-primary px-2" href="#">
+        <font-awesome-icon icon="fa-brands fa-youtube" class="fab" />
+      </a>
+    </div>
+  </div>
     </div>
 </div>
 <!-- Topbar End -->
@@ -66,3 +73,8 @@
 </div>
 <!-- Navbar End -->
 </template>
+<script setup>
+import { navbarPlugin } from '@/plugins/navbarPlugin';
+
+navbarPlugin();
+</script>

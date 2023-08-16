@@ -10,7 +10,7 @@
         </div>
         <div class="owl-carousel service-carousel">
             <div class="service-item position-relative">
-                <img class="img-fluid" src="../static/assets/img/service-1.jpg" alt="">
+                <img class="img-fluid" src="../../static/assets/img/service-1.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Body Massage</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="../static/assets/img/service-2.jpg" alt="">
+                <img class="img-fluid" src="../../static/assets/img/service-2.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Stone Therapy</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="img/service-3.jpg" alt="">
+                <img class="img-fluid" src="../../static/assets/img/service-3.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Facial Therapy</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="../static/assets/img/service-4.jpg" alt="">
+                <img class="img-fluid" src="../../static/assets/img/service-4.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Skin Care</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="../static/assets/img/service-5.jpg" alt="">
+                <img class="img-fluid" src="../../static/assets/img/service-5.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Stream Bath</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="../static/assets/img/service-6.jpg" alt="">
+                <img class="img-fluid" src="../../static/assets/img/service-6.jpg" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Face Masking</h4>
                     <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
