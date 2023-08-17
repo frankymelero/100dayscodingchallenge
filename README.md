@@ -14,7 +14,7 @@ Por otro lado, he programado un timer para que automáticamente vaya iterando de
 
 Una vez acabado el carousel, he ajustado el otro carousel que tenía la página:
 
-![Snap 9 plantilla SPA](/imagenes-readme/captura9.jpg)
+![Snap 9 plantilla SPA](/imagenes-readme/captura9.JPG)
 
 De la misma forma, he implementado la lógica desde cero por los mismos motivos antes comentados. 
 
