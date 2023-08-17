@@ -15,9 +15,9 @@
                         <h1 class="mb-4">Best Relax And Spa Zone</h1>
                         <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
                         <ul class="list-inline">
-                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Mon – Fri : 9:00 AM - 7:00 PM</li>
-                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Saturday : 9:00 AM - 6:00 PM</li>
-                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Sunday : Closed</li>
+                            <li class="h6 py-1"><font-awesome-icon icon="far fa-circle" class="text-primary mr-3"/>Mon – Fri : 9:00 AM - 7:00 PM</li>
+                            <li class="h6 py-1"><font-awesome-icon icon="far fa-circle" class="text-primary mr-3"/>Saturday : 9:00 AM - 6:00 PM</li>
+                            <li class="h6 py-1"><font-awesome-icon icon="far fa-circle" class="text-primary mr-3"/>Sunday : Closed</li>
                         </ul>
                         <a href="" class="btn btn-primary mt-2">Book Now</a>
                     </div>

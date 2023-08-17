@@ -12,10 +12,10 @@
                     <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
                     <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
                     <div class="d-flex justify-content-start mt-4">
-                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><font-awesome-icon icon="fa-brands fa-twitter" class="fab" /></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><font-awesome-icon icon="fa-brands fa-facebook-f" class="fab" /></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#"><font-awesome-icon icon="fa-brands fa-linkedin-in" class="fab" /></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square" href="#"><font-awesome-icon icon="fa-brands fa-instagram" class="fab" /></a>
                     </div>
                 </div>
                 <div class="col-lg-6 pl-lg-5">
@@ -63,7 +63,7 @@
                     <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
-                    <p class="m-0 text-white">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p class="m-0 text-white">Designed by <a href="https://htmlcodex.com">HTML Codex.</a>  Converted by Franky Melero</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,19 @@
 # 100 days coding challenge
 
+
+## Reto de programación, día 12/100.
+
+Hoy tenía planeado continuar con la plantilla, pero hay varios ajustes que debo de hacer en la página de actividades para la mejora de la comprensión lectora. 
+
+Empezamos ajustando la fitxa del alumnado para que te lleve automáticamente a las estadísticas del nivel actual. Adicionalmente, he añadido una funcionalidad extra en dos tipos de usuario, para que ahora puedan eliminar el registro de actividades realizado por cada alumno. También he modificado la parte de faqs, para que sea más intuitiva la edición de cada entrada. 
+
+Por suerte, he llegado a implementar todos los cambios previstos en el día de hoy, por lo que podré continuar sin problemas con la plantilla mañana. 
+
+Continuamos poco a poco hacia la meta.
+
+PS: No puedo compartir screenshots de los cambios, soy consciente que la entrada del día de hoy parece vacía, pero al fin y al cabo el producto no es mío, por lo que he de respetar las decisiones del dueño de la página.
+
+
 ## Reto de programación, día 11/100.
 
 Hoy es día de ajustar detalles de la plantilla. Empezamos el día instalando los íconos de fontawesome tal y como estaban en la plantilla original. He creado una carpeta plugins dónde definir cada una de las funcionalidades de manera encapsulada, para luego importarlas en los componentes que lo requieran. En este caso, el nombre del archivo creado es "fontawesome.js". He importado todos los íconos tanto de solid, como de brands directamente desde el este archivo, y exportado como nuxt plugin, realizando su el cambio correspondiente en el nuxt.config.ts. Después de una ligera modificación en la forma de llamar a la librería, los íconos han sido añadidos tal y como vienen en la plantilla:
