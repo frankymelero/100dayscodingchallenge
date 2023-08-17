@@ -1,5 +1,41 @@
 # 100 days coding challenge
 
+## Reto de programación, día 13/100.
+
+Continuamos con la plantilla, tal y como habíamos planeado. Empezamos arreglando el carousel:
+
+![Snap 7 plantilla SPA](/imagenes-readme/captura7.JPG)
+
+He modificado la estructura del componente completamente, ya que la estructura que venía de serie en la plantilla era demasiado compleja y pesada para lo que queremos. De hecho, hay muchos de los ajustes que hace el script predeterminado que se pueden hacer con mejores prácticas en Nuxt, por ello he decidido volver a escribir toda la lógica de cero. 
+
+Ahora, el carousel carga los datos desde una array de objetos que porporciona el h2, la descripción e imagen. He asignado un indice a cada uno de los li, cada vez que se hace click en un li, detecta en cual has hecho click, asigna la clase active y carga los datos del objeto en función de la posición que ocupen en el array. Es decir, si se clicka en el primer elemento devuelve el objeto en el array correspondiente a la posición 0, y así...
+
+Por otro lado, he programado un timer para que automáticamente vaya iterando desde el 0 al length de la array cada x mili segundos. De esta forma, el elemento irá cambiando el contenido constantemente. 
+
+Una vez acabado el carousel, he ajustado el otro carousel que tenía la página:
+
+![Snap 9 plantilla SPA](/imagenes-readme/captura9.JPG)
+
+De la misma forma, he implementado la lógica desde cero por los mismos motivos antes comentados. 
+
+Para acabar, he ajustado pequeños detalles del footer.
+
+![Snap 8 plantilla SPA](/imagenes-readme/captura8.JPG)
+
+Ahora solo queda arreglar el dropdown del menú, y ajustar la siguiente parte:
+
+(así se ve)
+
+![Snap 10 plantilla SPA](/imagenes-readme/captura10.JPG)
+
+(así se debería ver)
+
+![Snap 11 plantilla SPA](/imagenes-readme/captura11.JPG)
+
+Lo dejamos por hoy, mañana más. Estimo que por fin quedará lista toda la migración de la página. En dos días, podremos añadir funcionalidades nuevas. Por otro lado, una vez acabe con esta plantilla, cambiaré a React y acabaré los últimos detalles que quedan de mi portfolio, para así desplegarlo en un vercel y poderlo mostrar.
+
+Keep coding till your fingers bleed!
+
 
 ## Reto de programación, día 12/100.
 
