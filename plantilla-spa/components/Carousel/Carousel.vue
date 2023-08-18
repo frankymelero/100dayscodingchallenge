@@ -28,7 +28,7 @@
   </template>
   
   <script setup>
-  import { ref, computed, onMounted } from 'vue';
+  import { ref, computed, onMounted, onUnmounted } from 'vue';
   
   const carouselIndicators = [
     {
@@ -52,32 +52,40 @@
   ];
   
   const activeIndex = ref(0);
+  const isIntervalPaused = ref(false);
   
-  //Crea la reactividad modificando el contenido en funcion del indice activo 
+  // Crea la reactividad modificando el contenido en función del índice activo
   const activeCarouselItem = computed(() => {
     return carouselIndicators[activeIndex.value];
   });
   
-  //Captura el indice del click, y setea el indice activo.
+  // Captura el índice del clic y establece el índice activo.
   const handleliClick = (index) => {
     activeIndex.value = index;
+    isIntervalPaused.value = true;
+    setTimeout(() => {
+      isIntervalPaused.value = false;
+    }, 5000);
   };
   
-  // Cambia automáticamente el índice activo cada 4 segundos
+  let interval;
+  
+  // Comprueba si el valor del intervalo está pausado, si no lo está reinicia el ciclo
   onMounted(() => {
-    const interval = setInterval(() => {
-      if (activeIndex.value === 2) {
-        activeIndex.value = 0;
-      } else {
-        activeIndex.value += 1;
+    interval = setInterval(() => {
+      if (!isIntervalPaused.value) {
+        if (activeIndex.value === carouselIndicators.length - 1) {
+          activeIndex.value = 0;
+        } else {
+          activeIndex.value += 1;
+        }
       }
     }, 8000);
+  });
   
-    // Limpia el intervalo cuando el componente se desmonta
-    onUnmounted(() => {
-      clearInterval(interval);
-    });
-
+  // Limpia el intervalo cuando el componente se desmonta
+  onUnmounted(() => {
+    clearInterval(interval);
   });
   </script>
   

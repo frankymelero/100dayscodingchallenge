@@ -2,74 +2,24 @@
     
     <!-- Service Start -->
     <div class="container-fluid px-0 py-5 my-5">
-        <div class="row mx-0 justify-content-center text-center">
-            <div class="col-lg-6">
-                <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">Our Service</h6>
-                <h1>Spa & Beauty Services</h1>
-            </div>
+    <div class="row mx-0 justify-content-center text-center">
+      <div class="col-lg-6">
+        <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">Our Service</h6>
+        <h1>Spa & Beauty Services</h1>
+      </div>
+    </div>
+    <div class="owl-carousel service-carousel">
+      <div v-for="(service, index) in services" :key="index" class="service-item position-relative">
+        <img class="img-fluid" :src="service.image" alt="" style="background: rgba(33, 30, 28, 0.7);">
+        <div class="service-text text-center">
+          <h4 class="text-white font-weight-medium px-3">{{ service.title }}</h4>
+          <p class="text-white px-3 mb-3">{{ service.description }}</p>
+          <div class="w-100 bg-white text-center p-4">
+            <a class="btn btn-primary" href="">Make Order</a>
+          </div>
         </div>
-        <div class="owl-carousel service-carousel">
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="../../static/assets/img/service-1.jpg" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Body Massage</h4>
-                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="../../static/assets/img/service-2.jpg" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Stone Therapy</h4>
-                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="../../static/assets/img/service-3.jpg" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Facial Therapy</h4>
-                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="../../static/assets/img/service-4.jpg" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Skin Care</h4>
-                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="../../static/assets/img/service-5.jpg" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Stream Bath</h4>
-                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="../../static/assets/img/service-6.jpg" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Face Masking</h4>
-                    <p class="text-white px-3 mb-3">Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
+    </div>
         <div class="row justify-content-center bg-appointment mx-0">
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
@@ -125,3 +75,74 @@
     </div>
     <!-- Service End -->
 </template>
+
+<script setup>
+const services = [
+  {
+    title: 'Body Massage',
+    description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
+    image: '_nuxt/static/assets/img/service-1.jpg'
+  },
+  {
+    title: 'Stone Therapy',
+    description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
+    image: '_nuxt/static/assets/img/service-2.jpg'
+  },
+  {
+    title: 'Facial Therapy',
+    description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
+    image: '_nuxt/static/assets/img/service-3.jpg'
+  },
+  {
+    title: 'Skin Care',
+    description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
+    image: '_nuxt/static/assets/img/service-4.jpg'
+  },
+  {
+    title: 'Stream Bath',
+    description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
+    image: '_nuxt/static/assets/img/service-5.jpg'
+  },
+  {
+    title: 'Face Masking',
+    description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
+    image: '_nuxt/static/assets/img/service-6.jpg'
+  },
+  // ... (otros servicios)
+];
+</script>
+
+<style scoped>
+.service-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+overflow: hidden;
+  
+}
+
+.service-item {
+  flex: 0 0 auto;
+  
+}
+.service-item, .service-text{
+
+    background: none !important;
+
+}
+.service-item:hover, .service-text:hover{
+    background: none !important;
+
+transition: 0.4s;
+}
+.service-item img {
+  max-width: 20vw; /* Ajusta automáticamente el ancho de la imagen */
+  height: auto; /* Mantén la proporción de aspecto */
+}
+
+
+
+.bg-appointment {
+    background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(_nuxt/static/assets/img/carousel-1.jpg), no-repeat center center;
+    background-size: cover;
+  }
+</style>

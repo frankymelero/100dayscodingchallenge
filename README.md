@@ -1,5 +1,38 @@
 # 100 days coding challenge
 
+## Reto de programación, día 14/100.
+
+La constancia es la virtud de aquellos que quieren llegar a cumplir sus metas. Han pasado ya dos semanas desde que iniciamos este reto, y puedo decir que está siendo una experiencia muy divertida. Aunque el camino sea largo, si cada día se recorre una parte de él, al final la meta está cada vez más cerca. 
+
+Hoy tenía planedo ajustar la parte llamada "nuestros servicios". Inicialmente estaba de la siguiente forma:
+
+![Snap 10 plantilla SPA](/imagenes-readme/captura10.JPG)
+
+He tenido que hacer bastantes cambios para hacerlo funcionar tal y como está en la plantilla. Originalmente, esta sección dependía de la libreria del carrousel, y como hemos adaptado toda la lógica, he tenido que hacerla desde cero. Este carrousel tiene detalles bastante particulares. Cuando se hace hover en él, la imagen se mueve hacia arriba, mostrando el boton "Make Order". Por otro lado, no muestra todas las imagenes en pantalla, y esconde el overflow. Para pasar entre las imagenes, se debe arrastrar el carousel, que hace aparecer la siguiente imagen, y esconde la primera. 
+
+Después de gran parte de la jornada, he conseguido ajustar el carousel tal y como venía de serie, realizando algunos cambios en la estructura. Para evitar repetir código, he seguido el mismo patrón que con el resto de componentes, es decir, he generado los elementos del carousel de forma reactiva, cargando los datos mediante un array de objetos. Tras varios ajustes, he conseguido acercarme mucho a la versión original:
+
+![Snap 12 plantilla SPA](/imagenes-readme/captura12.JPG)
+
+También he ajustado la parte dónde se hace la reserva:
+
+![Snap 13 plantilla SPA](/imagenes-readme/captura13.JPG)
+
+Para acabar el día, he modificado pequeños detalles del primer carousel y del último para mejorar la experiencia de usuario. Ahora, una vez se hace click, el timer que pasaba las páginas del carousel se detiene, y se reinicia al cabo de varios segundos. De esta forma, es más sencilla la lectura del contenido dentro del componente.
+
+Mañana continuaremos con la útima sección que queda por refactorizar:
+
+(como se ve)
+![Snap 14 plantilla SPA](/imagenes-readme/captura14.JPG)
+
+(como se debería ver)
+![Snap 15 plantilla SPA](/imagenes-readme/captura15.JPG)
+
+Una vez acabemos con este componente, y arreglemos el dropdown del menú, la página ya estará lista para añadirle funcionalidades que no venían de serie. Estimo que en dos días más la tendré acabada, lista para desplegar en Vercel.
+
+Pushing, pushing and more pushing. It's the only way.
+
+
 ## Reto de programación, día 13/100.
 
 Continuamos con la plantilla, tal y como habíamos planeado. Empezamos arreglando el carousel:
@@ -32,7 +65,7 @@ Ahora solo queda arreglar el dropdown del menú, y ajustar la siguiente parte:
 
 ![Snap 11 plantilla SPA](/imagenes-readme/captura11.JPG)
 
-Lo dejamos por hoy, mañana más. Estimo que por fin quedará lista toda la migración de la página. En dos días, podremos añadir funcionalidades nuevas. Por otro lado, una vez acabe con esta plantilla, cambiaré a React y acabaré los últimos detalles que quedan de mi portfolio, para así desplegarlo en un vercel y poderlo mostrar.
+Lo dejamos por hoy, mañana más. En dos días, probablemente podremos añadir funcionalidades nuevas. Por otro lado, una vez acabe con esta plantilla, cambiaré a React y acabaré los últimos detalles que quedan de mi portfolio, para así desplegarlo en un vercel y poderlo mostrar.
 
 Keep coding till your fingers bleed!
 
