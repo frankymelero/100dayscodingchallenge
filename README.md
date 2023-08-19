@@ -1,5 +1,31 @@
 # 100 days coding challenge
+## Reto de programación, día 15/100. 
 
+La ley de murphy es increible, con el calor que hace, va y se me rompe el ventilador. 
+
+Persianas bajadas, continúo con la plantilla del SPA (el de relax, no una single page application). Hoy será por fin el día en el cual tendré que dejar el proyecto tal y como está la plantilla original de serie. Por muchas veces que lo vea, me sigue asombrando el hecho de la eficiencia con el uso de frameworks. Repasando, he convertido 7000 lineas de código a 700, haciendo una funcionalidad muy parecida, sino la misma. 
+
+Empiezo el día dónde ayer lo dejé, vamos a convertir la parte del precio en un carousel interactivo. Como peculiaridad, la funcionalidad de este componente se parece mucho al carousel de servicios, aunque en este caso solo hay 3 productos. De hecho, el carousel está pensado para que puedas añadir tantos productos como quieras. 
+
+Después de toda la mañana, puedo decir que tengo una sección bastante parecida a la original:
+
+![Snap 17 plantilla SPA](/imagenes-readme/captura17.JPG)
+
+Así estaba previamente:
+
+![Snap 14 plantilla SPA](/imagenes-readme/captura14.JPG)
+
+Ya tan solo queda ajustar el dropdown del navbar, y tendré la plantilla lista para añadirle las nuevas funcionalidades, por lo que apretaré para dejarlo listo.
+
+ El restultado ha sido este:
+
+![Snap 14 plantilla SPA](/imagenes-readme/captura19.JPG)
+
+Hasta aquí por hoy, mañana empezaré a añadir nuevas funcionalidades para dejar la plantilla lista para quien quiera utilizarla. Podréis encontrar en este mismo repositorio el código de la plantilla. Mi intención es dejar la plantilla con ciertos aspectos por modificar para que se pueda re-utilizar facilmente, y por supuesto me gustaría hacer una guía de instalación de la misma, así como de aspectos importantes de la plantilla. Una vez esté todo acabado, desplegaré la página para que la pruebe quien esté interesado.
+
+&#9835; Queremos marcha, marcha. &#9835; 
+
+Mañana seguimos!
 ## Reto de programación, día 14/100.
 
 La constancia es la virtud de aquellos que quieren llegar a cumplir sus metas. Han pasado ya dos semanas desde que iniciamos este reto, y puedo decir que está siendo una experiencia muy divertida. Aunque el camino sea largo, si cada día se recorre una parte de él, al final la meta está cada vez más cerca. 

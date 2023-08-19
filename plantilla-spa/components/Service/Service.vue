@@ -14,7 +14,7 @@
         <div class="service-text text-center">
           <h4 class="text-white font-weight-medium px-3">{{ service.title }}</h4>
           <p class="text-white px-3 mb-3">{{ service.description }}</p>
-          <div class="w-100 bg-white text-center p-4">
+          <div class="w-100 bg-white text-center p-4 description-box">
             <a class="btn btn-primary" href="">Make Order</a>
           </div>
         </div>
@@ -112,37 +112,78 @@ const services = [
 ];
 </script>
 
+
 <style scoped>
 .service-carousel {
   display: flex;
   flex-wrap: nowrap;
-overflow: hidden;
-  
+  overflow: hidden;
+
 }
 
 .service-item {
   flex: 0 0 auto;
+  position: relative;
+  
+
+}/* Agrega un pseudo-elemento antes de la imagen para el margen transparente */
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; 
+  background-color: white; 
+  z-index: 3;/* Color transparente */
+}
+
+.service-item:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0px; 
+  background-color: white; 
+  transition: 0.5s;
+  }
+
+
+
+.service-item, .service-text{
+    background-color: rgba(33, 30, 28, 0.5);
+}
+
+.service-item:hover, .service-text:hover {
+    background-color: rgba(33, 30, 28, 0.5);
+  cursor: grab;
+  transition: 0.5s;
   
 }
-.service-item, .service-text{
 
-    background: none !important;
-
-}
-.service-item:hover, .service-text:hover{
-    background: none !important;
-
-transition: 0.4s;
-}
 .service-item img {
-  max-width: 20vw; /* Ajusta automáticamente el ancho de la imagen */
-  height: auto; /* Mantén la proporción de aspecto */
+  max-width: 20vw;
+  height: auto;
+  
+/* Agrega el filtro de escala de grises */
+}
+.service-item:hover img {
+  max-width: 20vw;
+  height: auto;
+    margin-top: px;
+
+/* Agrega el filtro de escala de grises */
 }
 
 
+.service-item:hover > .service-text > .description-box {
+  min-height: 130px !important;
+  transition: 0.5s;
+ }
 
 .bg-appointment {
-    background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(_nuxt/static/assets/img/carousel-1.jpg), no-repeat center center;
-    background-size: cover;
-  }
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(_nuxt/static/assets/img/carousel-1.jpg), no-repeat center center;
+  background-size: cover;
+}
 </style>
