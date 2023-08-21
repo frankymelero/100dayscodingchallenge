@@ -57,14 +57,14 @@
                 <a href="service.html" class="nav-item nav-link">Services</a>
                 <a href="price.html" class="nav-item nav-link">Pricing</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                        <a href="appointment.html" class="dropdown-item">Appointment</a>
-                        <a href="opening.html" class="dropdown-item">Open Hours</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" @mouseover="showDropdown" @mouseleave="hideDropdown">Pages</a>
+    <div class="dropdown-menu rounded-0 m-0 custom-dropdown-menu">
+      <a href="appointment.html" class="dropdown-item">Appointment</a>
+      <a href="opening.html" class="dropdown-item">Open Hours</a>
+      <a href="team.html" class="dropdown-item">Our Team</a>
+      <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+    </div>
+  </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
             <a href="" class="btn btn-primary d-none d-lg-block">Book Now</a>
@@ -74,7 +74,37 @@
 <!-- Navbar End -->
 </template>
 <script setup>
+import { ref } from 'vue';
 import { navbarPlugin } from '@/plugins/navbarPlugin';
 
 navbarPlugin();
+const dropdownMenuVisible = ref(false);
+
+const showDropdown = () => {
+  dropdownMenuVisible.value = true;
+};
+
+const hideDropdown = () => {
+  dropdownMenuVisible.value = false;
+};
 </script>
+
+<style scoped>
+
+.nav-item.dropdown .custom-dropdown-menu {
+  display: none;
+  /* ...otros estilos del menú desplegable... */
+}
+
+.nav-item.dropdown:hover .custom-dropdown-menu {
+  display: block;
+  /* Cambia las propiedades de estilo en hover */
+  background-color: #f8f9fa;
+  /* ...otros estilos en hover... */
+}
+
+
+.dropdown-item:hover{
+  background-color: #eff2f5;
+}
+</style>

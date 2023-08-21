@@ -15,10 +15,12 @@
             <img class="position-absolute w-100 h-100" id="carouselimg" :src="activeCarouselItem.urlimg" style="object-fit: cover;">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
               <div class="p-3" style="max-width: 900px;">
-                <h6 id="h1-message" class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown">SPA & BEAUTY CENTER</h6>
+                <h6 id="h1-message" class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" :key="`h1-animation-${animationKey}`">
+                SPA & BEAUTY CENTER
+              </h6>
                 <h3 class="display-3 text-capitalize text-white mb-3">{{ activeCarouselItem.h1 }}</h3>
                 <p id="description" class="mx-md-5 px-5">{{ activeCarouselItem.description }}</p>
-                <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Make Appointment</a>
+                <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#" :key="`h1-animation-${animationKey}`">Make Appointment</a>
               </div>
             </div>
           </div>
@@ -29,7 +31,7 @@
   
   <script setup>
   import { ref, computed, onMounted, onUnmounted } from 'vue';
-  
+  const animationIndex = ref(0);
   const carouselIndicators = [
     {
       "id": "1",
@@ -53,21 +55,29 @@
   
   const activeIndex = ref(0);
   const isIntervalPaused = ref(false);
-  
+  const animationKey = ref(0);
+
+
   // Crea la reactividad modificando el contenido en función del índice activo
   const activeCarouselItem = computed(() => {
     return carouselIndicators[activeIndex.value];
   });
   
-  // Captura el índice del clic y establece el índice activo.
-  const handleliClick = (index) => {
-    activeIndex.value = index;
-    isIntervalPaused.value = true;
-    setTimeout(() => {
-      isIntervalPaused.value = false;
-    }, 5000);
-  };
+  const updateAnimation = () => {
+  animationKey.value += 1;
+};
+
   
+// Captura el índice del clic y establece el índice activo.
+const handleliClick = (index) => {
+  activeIndex.value = index;
+  animationIndex.value = index; // Actualiza el índice de la animación
+  isIntervalPaused.value = true;
+  updateAnimation(); 
+  setTimeout(() => {
+    isIntervalPaused.value = false;
+  }, 5000);
+};
   let interval;
   
   // Comprueba si el valor del intervalo está pausado, si no lo está reinicia el ciclo
@@ -76,8 +86,10 @@
       if (!isIntervalPaused.value) {
         if (activeIndex.value === carouselIndicators.length - 1) {
           activeIndex.value = 0;
+          updateAnimation();
         } else {
           activeIndex.value += 1;
+          updateAnimation();
         }
       }
     }, 8000);
@@ -88,4 +100,32 @@
     clearInterval(interval);
   });
   </script>
-  
+
+  <style scoped>
+
+.animate__fadeInDown {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1.2s forwards;
+}
+
+.animate__fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s forwards;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

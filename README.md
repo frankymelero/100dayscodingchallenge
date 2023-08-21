@@ -8,7 +8,9 @@ Puedo ver que hay ligeros detalles que hay que modificar del responsive. Adicion
 
 Durante el día de hoy me debería dar tiempo a acabar todas las tareas pendientes, a falta de las funcionalidades desplegaré hoy la página en Vercel. 
 
-Vamos a ello, e
+Vamos a ello, empezamos con la animación del carousel. Después de un rato con ello, he conseguido que se anime no tan solo la primera vez, sino cada vez que se haga el click para cambiar de imagen, o cuando se autoupdatea con el timer. 
+
+![Snap 20 plantilla SPA](/imagenes-readme/captura20.JPG)
 
 
  
