@@ -6,14 +6,19 @@ Continuamos con el reto. En los anteriores días hemos ido refactorizando el có
 
 Puedo ver que hay ligeros detalles que hay que modificar del responsive. Adicionalmente, he de crear una animación para el primer carousel. Otra tarea pendiente es modificar todos los enlaces, y sustituirlos por Nuxt Links, de esta forma estaré navegando correctamente por la página utilizando las herramientas que me proporciona el framework. Por otro lado, la parte de precios tiene un pequeño bug de funcionamiento que he de corregir. Después de analizar bien el problema, he optado para este caso utilizar una librería externa llamada Swiper que dejará la sección tal y como es. 
 
-Durante el día de hoy me debería dar tiempo a acabar todas las tareas pendientes, a falta de las funcionalidades desplegaré hoy la página en Vercel. 
+Durante el día de hoy me debería dar tiempo a acabar todas las tareas pendientes excepto el responsive, a falta de acabar, desplegaré hoy la página en Vercel. 
 
 Vamos a ello, empezamos con la animación del carousel. Después de un rato con ello, he conseguido que se anime no tan solo la primera vez, sino cada vez que se haga el click para cambiar de imagen, o cuando se autoupdatea con el timer. 
 
 ![Snap 20 plantilla SPA](/imagenes-readme/Captura20.JPG)
 
+Continuamos con la sección Pricing, en este caso he de instalar y aplicar una libreria externa llamada Swiper, manteniendo los estilos anteriores. El resultado ha sido muy parecido al componente que programé desde cero, pero ahora el comportamiento del componente es exactamente el que buscaba.
 
- 
+![Snap 21 plantilla SPA](/imagenes-readme/captura21.JPG)
+
+Después de modificar todos los enlaces de la página, solo quedará el responsive. Considerando que tengo que marchar esta tarde, continuaré con el responsive por la noche cuando llegue. Mañana actualizaré el estado de la página, con los cambios de esta noche y más probablemente la suba a Vercel para que podáis ver como está quedando.
+
+Keep coding, till your fingers bleed.
 
 
 ## Reto de programación, día 15/100. 

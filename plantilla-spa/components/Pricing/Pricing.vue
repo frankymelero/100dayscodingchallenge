@@ -55,7 +55,7 @@ const products = ref([
   {
     price: "99",
     plan: "FAMILY PLAN",
-    services: "Full Body Massagess --- Deep Tissue Massages --- Hot Stone Massages --- Tissue Body Polish --- Foot & Nail Care"
+    services: "Full Body Massages --- Deep Tissue Massages --- Hot Stone Massages --- Tissue Body Polish --- Foot & Nail Care"
   },
   {
     price: "149",
