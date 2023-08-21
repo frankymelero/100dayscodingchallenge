@@ -10,7 +10,7 @@ Durante el día de hoy me debería dar tiempo a acabar todas las tareas pendient
 
 Vamos a ello, empezamos con la animación del carousel. Después de un rato con ello, he conseguido que se anime no tan solo la primera vez, sino cada vez que se haga el click para cambiar de imagen, o cuando se autoupdatea con el timer. 
 
-![Snap 20 plantilla SPA](/imagenes-readme/captura20.JPG)
+![Snap 20 plantilla SPA](/imagenes-readme/Captura20.JPG)
 
 
  
