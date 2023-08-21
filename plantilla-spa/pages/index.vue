@@ -1,6 +1,6 @@
 <template>
 
-  <Carousel></Carousel>
+  <CustomCarousel></CustomCarousel>
   <About></About>
   <Service></Service>
   <OpenHours></OpenHours>

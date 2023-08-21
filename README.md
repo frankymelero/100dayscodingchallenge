@@ -1,4 +1,19 @@
 # 100 days coding challenge
+
+## Reto de programación, día 16/100. 
+
+Continuamos con el reto. En los anteriores días hemos ido refactorizando el código de una plantilla. Esperaba empezar con nuevas implementaciones, pero hay algunos cambios que debo realizar antes: 
+
+Puedo ver que hay ligeros detalles que hay que modificar del responsive. Adicionalmente, he de crear una animación para el primer carousel. Otra tarea pendiente es modificar todos los enlaces, y sustituirlos por Nuxt Links, de esta forma estaré navegando correctamente por la página utilizando las herramientas que me proporciona el framework. Por otro lado, la parte de precios tiene un pequeño bug de funcionamiento que he de corregir. Después de analizar bien el problema, he optado para este caso utilizar una librería externa llamada Swiper que dejará la sección tal y como es. 
+
+Durante el día de hoy me debería dar tiempo a acabar todas las tareas pendientes, a falta de las funcionalidades desplegaré hoy la página en Vercel. 
+
+Vamos a ello, e
+
+
+ 
+
+
 ## Reto de programación, día 15/100. 
 
 La ley de murphy es increible, con el calor que hace, va y se me rompe el ventilador. 
