@@ -81,17 +81,17 @@ const services = [
   {
     title: 'Body Massage',
     description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
-    image: 'static/assets/img/service-1.jpg'
+    image: '../../static/assets/img/service-1.jpg'
   },
   {
     title: 'Stone Therapy',
     description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
-    image: '_nuxt/static/assets/img/service-2.jpg'
+    image: '../../static/assets/img/service-2.jpg'
   },
   {
     title: 'Facial Therapy',
     description: 'Elitr labore sit dolor erat est lorem diam sea ipsum diam dolor duo sit ipsum',
-    image: '_nuxt/static/assets/img/service-3.jpg'
+    image: '@/static/assets/img/service-3.jpg'
   },
   {
     title: 'Skin Care',
