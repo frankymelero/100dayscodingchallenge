@@ -53,7 +53,7 @@ Conforme he ido testeando cada una de las páginas, me he dado cuenta que cuando
 
 Podéis ver la primera versión desplegada a través del siguiente enlace:
 
-https://spa-plantilla-nuxt.vercel.app/
+https://spa-plantilla-nuxt-frankymelero.vercel.app/
 
 Seguimos avanzando, mañana tocará añadirle las funcionalidades. En los próximos días tengo pensado acabar ciertos detalles de mi portfolio, desplegarlo y añadir esta página a la sección de proyectos.
 
