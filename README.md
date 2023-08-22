@@ -5,7 +5,7 @@ Llegamos a la recta final de la plantilla. Hoy tocaba ajustar todos los aspectos
 
 Nos quedaba pendiente convertir el menú a NuxtLinks, retocar el responsive y acabar de revisar la página. Conforme he ido comparando la página con la plantilla inicial, me he dado cuenta que habían varias secciones por hacer. Por ejemplo, en contacto, había una seción con un mapa y formulario que he implementado:
 
-![Snap 22 plantilla SPA](/imagenes-readme/Captura22.JPG)
+![Snap 22 plantilla SPA](/imagenes-readme/captura22.JPG)
 
 He cargado todos los componentes en una estructura de páginas, para imitar la navegación que tiene la plantilla original. Por otro lado, hace unos días comentamos que había que hacer un componente que recibiera props para poder reutilizarlo en todas las páginas. En concreto, el componente está hecho de la siguiente forma:
 
