@@ -37,19 +37,19 @@
       "id": "1",
       "h1": "Massage Treatment",
       "description": "Lorem rebum magna dolore amet lorem eirmod magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum labore diam",
-      "urlimg": "assets/img/carousel-1.jpg"
+      "urlimg": "/assets/img/carousel-1.jpg"
     },
     {
       "id": "2",
       "h1": "Facial Treatment",
       "description": "Lorem rebum magna dolore amet lorem eirmod magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum labore diam",
-      "urlimg": "assets/img/carousel-2.jpg"
+      "urlimg": "/assets/img/carousel-2.jpg"
     },
     {
       "id": "3",
       "h1": "Cellulite Treatment",
       "description": "Lorem rebum magna dolore amet lorem eirmod magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum labore diam",
-      "urlimg": "assets/img/carousel-3.jpg"
+      "urlimg": "/assets/img/carousel-3.jpg"
     }
   ];
   
