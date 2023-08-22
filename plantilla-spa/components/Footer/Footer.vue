@@ -72,5 +72,19 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><font-awesome-icon :icon="['fas', 'angle-double-up']" /></a>
 </template>
+<script setup>
+
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
+
+const components = {
+  FontAwesomeIcon,
+};
+
+const icons = {
+  faAngleDoubleUp,
+};
+
+</script>

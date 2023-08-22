@@ -1,4 +1,65 @@
 # 100 days coding challenge
+## Reto de programación, día 17/100. 
+
+Llegamos a la recta final de la plantilla. Hoy tocaba ajustar todos los aspectos necesarios para que la plantilla se quedara tal y como se diseñó.
+
+Nos quedaba pendiente convertir el menú a NuxtLinks, retocar el responsive y acabar de revisar la página. Conforme he ido comparando la página con la plantilla inicial, me he dado cuenta que habían varias secciones por hacer. Por ejemplo, en contacto, había una seción con un mapa y formulario que he implementado:
+
+![Snap 22 plantilla SPA](/imagenes-readme/Captura22.JPG)
+
+He cargado todos los componentes en una estructura de páginas, para imitar la navegación que tiene la plantilla original. Por otro lado, hace unos días comentamos que había que hacer un componente que recibiera props para poder reutilizarlo en todas las páginas. En concreto, el componente está hecho de la siguiente forma:
+
+Componente CustomHeader.vue:
+```
+<script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  pageTitle: String
+});
+</script>
+
+<template>
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid bg-jumbotron" style="margin-bottom: 90px;">
+      <div class="container text-center py-5">
+        <h3 class="text-white display-3 mb-4">{{ pageTitle }}</h3>
+        <div class="d-inline-flex align-items-center text-white">
+          <p class="m-0"><a class="text-white" href="/">Home</a></p>
+          <font-awesome-icon icon="far fa-circle" class="px-3" />
+          <p class="m-0">{{ pageTitle }}</p>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+  </template>
+
+```
+Pásandole los props cada vez que se llama al componente:
+
+```
+     <CustomHeader pageTitle="About"></CustomHeader>
+
+```
+
+Resultado:
+
+
+![Snap 23 plantilla SPA](/imagenes-readme/captura23.JPG)
+
+Adicionalmente, he cargado el Navbar con props también para establecer la propiedad activa. De esta forma, en función de la página dónde estés viendo el navbar, automáticamente se seleccionará de otro color marcando así la página actual.
+
+Conforme he ido testeando cada una de las páginas, me he dado cuenta que cuando la página se veía en versión mobil, el menú no se desplegaba, así como varias cajas no estaban del todo encajadas. Tras realizar todos los cambios pertinentes, y después de realizar los tests necesarios, puedo confirmar que la página ya está lista para añadirle funcionalidades.
+
+Podéis ver la primera versión desplegada a través del siguiente enlace:
+
+https://spa-plantilla-nuxt.vercel.app/
+
+Seguimos avanzando, mañana tocará añadirle las funcionalidades. En los próximos días tengo pensado acabar ciertos detalles de mi portfolio, desplegarlo y añadir esta página a la sección de proyectos.
+
+A pesar que he trabajado con una plantilla pre diseñada, este trabajo de refactorización me ha venido muy bien para aprender ciertos detalles que antes no tenía en cuenta, así como para solidificar un pelín más mis bases de Nuxt.
+
+Keep coding, keep living :D 
 
 ## Reto de programación, día 16/100. 
 

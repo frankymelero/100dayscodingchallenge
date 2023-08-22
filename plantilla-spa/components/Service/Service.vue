@@ -171,7 +171,7 @@ const services = [
 .service-item:hover img {
   max-width: 20vw;
   height: auto;
-    margin-top: px;
+
 
 /* Agrega el filtro de escala de grises */
 }
@@ -185,5 +185,20 @@ const services = [
 .bg-appointment {
   background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(_nuxt/static/assets/img/carousel-1.jpg), no-repeat center center;
   background-size: cover;
+}
+
+@media (max-width: 753px) {
+  .service-item img {
+  max-width: 100vw;
+  height: auto;
+  
+/* Agrega el filtro de escala de grises */
+}
+.service-item:hover img {
+  max-width: 100vw;
+  height: auto;
+  
+/* Agrega el filtro de escala de grises */
+}
 }
 </style>

@@ -8,7 +8,7 @@
           </div>
           </div>
           <div class="col-lg-7 pt-5 pb-lg-5">
-            <div class="pricing-text bg-light p-4 p-lg-5 my-lg-5">
+            <div class="pricing-text bg-light p-4 p-lg-5 my-lg-5 container1">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
                   <div v-for="(product, index) in products" :key="index" class="prize-box bg-white swiper-slide">
@@ -22,7 +22,7 @@
                 <div class="p-4">
                   <ul style="list-style: none;">
                     <li v-for="(service, serviceIndex) in product.servicesArray" :key="serviceIndex" class="text-pricing-item">
-                      <font-awesome-icon icon="fa-check" class="text-success mr-2 mt-2" />
+                      <font-awesome-icon :icon="faCheck" class="text-success mr-2 mt-2" />
                       {{ service }}
                     </li>
                   </ul>
@@ -42,6 +42,9 @@
 
   
 <script setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+
 import Swiper from 'swiper/bundle';
 import { ref, onMounted } from 'vue';
 
@@ -70,11 +73,31 @@ products.value.forEach(product => {
 });
 
 onMounted(() => {
-  const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 2,
+  // Inicialización inicial del carrusel
+  let swiper;
+
+  // Función para ajustar slidesPerView según el ancho de la ventana
+  const adjustSlidesPerView = () => {
+    if (window.innerWidth <= 753) {
+      swiper.params.slidesPerView = 1;
+    } else {
+      swiper.params.slidesPerView = 2;
+    }
+    swiper.update(); // Actualizar el carrusel con la nueva configuración
+  };
+
+  // Inicializar el carrusel y ajustar slidesPerView
+  swiper = new Swiper('.swiper-container', {
+    slidesPerView: window.innerWidth <= 753 ? 1 : 2,
     spaceBetween: 10,
     // Resto de las opciones de Swiper
   });
+
+  // Observar cambios en el ancho de la ventana y ajustar slidesPerView
+  window.addEventListener('resize', adjustSlidesPerView);
+
+  // Llamar a la función de ajuste inicial
+  adjustSlidesPerView();
 });
 </script>
   
@@ -113,9 +136,23 @@ onMounted(() => {
       max-width: calc(100% + 20px); /* Añade un espacio adicional para el deslizamiento */
     }
 
-    .swiper-slide {
-      flex: 0 0 calc(50% - 5px); /* Muestra dos slides a la vez */
-      margin-right: 10px; /* Espacio entre las imágenes */
-      cursor: grab;
-    }
+  
+
+   
+@media (max-width: 753px) {
+  .swiper-container {
+    max-width: 100%; /* Evita que el contenedor se desborde */
+    overflow: hidden; /* Oculta el desborde del contenido */
+  }
+
+  .swiper-slide {
+    width: 100% !important; /* Ocupa todo el ancho disponible */
+    margin: 0 auto; /* Centra el slide horizontalmente */
+  }
+
+  .pricing-text {
+    min-width: auto;
+    max-width: 100%; /* Ajusta el ancho según tu preferencia */
+  }
+}
 </style>

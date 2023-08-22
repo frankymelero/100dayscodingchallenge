@@ -1,5 +1,5 @@
 <template>
-
+<NavBar currentPage="/"></NavBar>
   <CustomCarousel></CustomCarousel>
   <About></About>
   <Service></Service>
