@@ -37,7 +37,7 @@
       "id": "1",
       "h1": "Massage Treatment",
       "description": "Lorem rebum magna dolore amet lorem eirmod magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum labore diam",
-      "urlimg": "../../static/assets/img/carousel-1.jpg"
+      "urlimg": "../../static/assets/img/about.jpg"
     },
     {
       "id": "2",
