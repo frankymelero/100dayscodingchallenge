@@ -3,7 +3,7 @@
       <div class="container py-5">
         <div class="row align-items-center">
           <div class="col-lg-6 pb-5 pb-lg-0">
-            <img class="img-fluid w-100" src="@/static/assets/img/testimonial.jpg" alt="">
+            <img class="img-fluid w-100" src="/assets/img/testimonial.jpg" alt="">
           </div>
           <div class="col-lg-6">
             <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2">Testimonial</h6>
@@ -50,21 +50,21 @@
       id: '1',
       clientName: 'Client Name 1',
       profession: 'Profession 1',
-      image: '_nuxt/static/assets/img/testimonial-1.jpg',
+      image: '/assets/img/testimonial-1.jpg',
       comment: 'Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy. Tempor sea ipsum diam  sed clita dolore eos dolores magna erat dolore sed stet justo et dolor.',
     },
     {
       id: '2',
       clientName: 'Client Name 2',
       profession: 'Profession 2',
-      image: '_nuxt/static/assets/img/testimonial-2.jpg',
+      image: '/assets/img/testimonial-2.jpg',
       comment: 'Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy. Tempor sea ipsum diam  sed clita dolore eos dolores magna erat dolore sed stet justo et dolor.',
     },
     {
       id: '3',
       clientName: 'Client Name 3',
       profession: 'Profession 3',
-      image: '_nuxt/static/assets/img/testimonial-3.jpg',
+      image: '/assets/img/testimonial-3.jpg',
       comment: 'Aliquyam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy. Tempor sea ipsum diam  sed clita dolore eos dolores magna erat dolore sed stet justo et dolor.',
     },
   ];

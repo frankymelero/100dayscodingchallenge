@@ -20,3 +20,10 @@ const props = defineProps({
     </div>
     <!-- Header End -->
   </template>
+  <style scoped>
+
+.bg-jumbotron {
+    background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(/assets/img/carousel-3.jpg), no-repeat center center;
+  }
+
+</style>
