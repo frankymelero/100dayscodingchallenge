@@ -66,20 +66,18 @@ const sendEmail = () => {
     message: message,
   };
 
- 
+
   emailjs.send('service_87e2u3i', 'template_35wn5fi', emailParams, 'UJc6rUhAnbit4DOGE')
     .then((response) => {
       console.log('Mensaje enviado:', response);
       alert("Mensaje enviado");
-      name = "";
-      email = "";
-      subject = "";
-      message = "";
+    window.location.reload();
 
     })
     .catch((error) => {
       console.error('Error al enviar el correo electrónico:', error);
       alert("Error, no se ha podido enviar el mensaje.");
+      window.location.reload();
     });
 };
 </script>
