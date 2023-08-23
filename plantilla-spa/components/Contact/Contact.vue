@@ -70,6 +70,8 @@ const sendEmail = () => {
     .then((response) => {
       console.log('Correo electrónico enviado:', response);
       alert("Mensaje enviado");
+      window.location.reload();
+
     })
     .catch((error) => {
       console.error('Error al enviar el correo electrónico:', error);
