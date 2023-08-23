@@ -10,7 +10,59 @@ El siguiente paso va a ser utilizar un servicio externo para el envío de e-mail
 
 Por otro lado, crearé una API sencilla en Express para gestionar las citas, así como una pequeña interfaz. Adicionalmente, integraré una tabla de usuarios que están registrados en el newsletter. 
 
-Empezamos con el mail:
+Empezamos con el formulario de contacto, como he comentado anteriormente enviaré un e-mail utilizando un servicio externo, en este caso email-js. Primero realizamos una configuración previa desde la página de emailjs, añadiendo el servicio de gmail, así como una plantilla con los datos exactos que vamos a utilizar en el formulario. Una vez configurado, instalamos el paquete emailjs, para luego adecuar la página de contacto a lo que queremos. 
+
+En este caso, como estaba previamente programado el formulario, tan solo tenemos que preocuparnos de la lógica: 
+
+```
+
+<script setup>
+import emailjs from 'emailjs-com';
+const sendEmail = () => {
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value;
+
+  const emailParams = {
+    from_name: name,
+    from_email: email,
+    subject: subject,
+    message: message,
+  };
+
+  emailjs.send('ID_DEL_SERVICIO', 'ID_TEMPLATE', emailParams, 'USER_ID')
+    .then((response) => {
+      console.log('Mensaje enviado:', response);
+      alert("Mensaje enviado");
+      window.location.reload();
+
+    })
+    .catch((error) => {
+      console.error('Error al enviar el correo electrónico:', error);
+      alert("Error, no se ha podido enviar el mensaje.");
+      window.location.reload();
+    });
+};
+</script>
+
+```
+En este caso enviamos una petición a la API de emailjs mediante promesas. Tras asignar la funcion sendEmail con el @click en el botón de submit, procedemos a hacer las primeras pruebas:
+
+![Snap 24 plantilla SPA](/imagenes-readme/captura24.JPG)
+
+Finalmente, tras un par de tests consigo que se envíe correctamente (con otros datos que los de la captura anterior):
+
+![Snap 25 plantilla SPA](/imagenes-readme/captura25.JPG)
+
+Ya estoy listo para pasar con la newsletter. Para ello voy a crear una pequeña API en express, y asignarle el endpoint correspondiente para la newsletter. De la misma forma que haré para gestionar las reservas. Aunque por hoy, simplemente plantearé la API, configuraré los aspectos básicos y la desplegaré para poder hacer pruebas con ella. 
+
+Mañana os mostraré el resultado del trabajo que tengo planeado realizar entre esta tarde, hasta el final de la jornada de mañana.  
+
+Si has leído esto, muchas gracias por seguir mi progreso. 
+
+¡Hasta el próximo día!
 
 
 ## Reto de programación, día 17/100. 
