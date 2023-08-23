@@ -66,25 +66,20 @@ const sendEmail = () => {
     message: message,
   };
 
-  const restartForm = () => {
-  // Reiniciar los valores de los campos del formulario
-  name = "";
-  email = "";
-  subject = "";
-  message = "";
-};
-
+ 
   emailjs.send('service_87e2u3i', 'template_35wn5fi', emailParams, 'UJc6rUhAnbit4DOGE')
     .then((response) => {
       console.log('Mensaje enviado:', response);
       alert("Mensaje enviado");
-    restartForm();
+      name = "";
+      email = "";
+      subject = "";
+      message = "";
 
     })
     .catch((error) => {
       console.error('Error al enviar el correo electrónico:', error);
       alert("Error, no se ha podido enviar el mensaje.");
-      restartForm();
     });
 };
 </script>
