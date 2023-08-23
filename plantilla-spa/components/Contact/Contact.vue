@@ -5,8 +5,8 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <iframe class="position-absolute w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <div class="position-relative h-100" >
+                        <iframe class="position-absolute w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="false" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
@@ -39,8 +39,7 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Send
-                                    Message</button>
+                                <button class="btn btn-primary py-3 px-4" type="button" @click="sendEmail">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -50,3 +49,31 @@
     </div>
     <!-- Contact End -->
 </template>
+
+<script setup>
+import emailjs from 'emailjs-com';
+const sendMessage = () => {
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value;
+
+  const emailParams = {
+    from_name: name,
+    from_email: email,
+    subject: subject,
+    message: message,
+  };
+
+  emailjs.send('service_87e2u3i', 'template_35wn5fi', emailParams, 'UJc6rUhAnbit4DOGE')
+    .then((response) => {
+      console.log('Correo electrónico enviado:', response);
+      alert("Mensaje enviado");
+    })
+    .catch((error) => {
+      console.error('Error al enviar el correo electrónico:', error);
+      // Aquí puedes manejar el error, si es necesario.
+    });
+};
+</script>

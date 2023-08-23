@@ -1,4 +1,18 @@
 # 100 days coding challenge
+
+## Reto de programación, día 18/100. 
+
+Hoy va a ser un gran día. Por fin empezaremos con las funcionalidades que no venían de serie en la plantilla.
+
+Tras un problema con las rutas de las imagenes en el deploy, finalmente he podido dejar la página muy parecida a como estaba diseñada originalmente. Si quieres ver como va quedando accede a la siguiente url: https://spa-plantilla-nuxt.vercel.app/ 
+
+El siguiente paso va a ser utilizar un servicio externo para el envío de e-mails. Al no contar con un servidor smtp, es la opción que veo más factible considerando el tipo de proyecto que es. Mi intención es usarlo tanto en Contacto, como cuando se agende una cita. 
+
+Por otro lado, crearé una API sencilla en Express para gestionar las citas, así como una pequeña interfaz. Adicionalmente, integraré una tabla de usuarios que están registrados en el newsletter. 
+
+Empezamos con el mail:
+
+
 ## Reto de programación, día 17/100. 
 
 Llegamos a la recta final de la plantilla. Hoy tocaba ajustar todos los aspectos necesarios para que la plantilla se quedara tal y como se diseñó.
@@ -53,7 +67,7 @@ Conforme he ido testeando cada una de las páginas, me he dado cuenta que cuando
 
 Podéis ver la primera versión desplegada a través del siguiente enlace:
 
-https://spa-plantilla-nuxt-frankymelero.vercel.app/
+https://spa-plantilla-nuxt.vercel.app/
 
 Seguimos avanzando, mañana tocará añadirle las funcionalidades. En los próximos días tengo pensado acabar ciertos detalles de mi portfolio, desplegarlo y añadir esta página a la sección de proyectos.
 
