@@ -12,7 +12,7 @@ Por otro lado, crearé una API sencilla en Express para gestionar las citas, as�
 
 Empezamos con el formulario de contacto, como he comentado anteriormente enviaré un e-mail utilizando un servicio externo, en este caso email-js. Primero realizamos una configuración previa desde la página de emailjs, añadiendo el servicio de gmail, así como una plantilla con los datos exactos que vamos a utilizar en el formulario. Una vez configurado, instalamos el paquete emailjs, para luego adecuar la página de contacto a lo que queremos. 
 
-En este caso, como estaba previamente programado el formulario, tan solo tenemos que preocuparnos de la lógica: 
+Como estaba previamente programado el formulario, tan solo tenemos que preocuparnos de la lógica: 
 
 ```
 
