@@ -66,12 +66,13 @@ const sendEmail = () => {
     message: message,
   };
 
-  const restartForm () => {
-      name = "";
-      email = "";
-      subject = "";
-      message = "";
-  }
+  const restartForm = () => {
+  // Reiniciar los valores de los campos del formulario
+  name = "";
+  email = "";
+  subject = "";
+  message = "";
+};
 
   emailjs.send('service_87e2u3i', 'template_35wn5fi', emailParams, 'UJc6rUhAnbit4DOGE')
     .then((response) => {
