@@ -66,16 +66,24 @@ const sendEmail = () => {
     message: message,
   };
 
+  const = restartForm () => {
+      name = "";
+      email = "";
+      subject = "";
+      message = "";
+  }
+
   emailjs.send('service_87e2u3i', 'template_35wn5fi', emailParams, 'UJc6rUhAnbit4DOGE')
     .then((response) => {
-      console.log('Correo electrónico enviado:', response);
+      console.log('Mensaje enviado:', response);
       alert("Mensaje enviado");
-      window.location.reload();
+    restartForm();
 
     })
     .catch((error) => {
       console.error('Error al enviar el correo electrónico:', error);
-      // Aquí puedes manejar el error, si es necesario.
+      alert("Error, no se ha podido enviar el mensaje.");
+      restartForm();
     });
 };
 </script>
