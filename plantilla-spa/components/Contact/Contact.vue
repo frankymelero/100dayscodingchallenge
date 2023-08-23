@@ -66,7 +66,7 @@ const sendEmail = () => {
     message: message,
   };
 
-  const = restartForm () => {
+  const restartForm () => {
       name = "";
       email = "";
       subject = "";
