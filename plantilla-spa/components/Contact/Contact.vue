@@ -52,7 +52,7 @@
 
 <script setup>
 import emailjs from 'emailjs-com';
-const sendMessage = () => {
+const sendEmail = () => {
 
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
