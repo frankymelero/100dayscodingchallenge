@@ -1,5 +1,19 @@
 # 100 days coding challenge
 
+
+## Reto de programación, día 19/100. 
+
+Hoy es imposible trabajar sin un buen vaso de agua fría y el ventilador al lado. El calor que emana el sol, penetra por las paredes de la casa, haciendo de esta una sauna.
+
+Empezamos el día planteando como vamos a construir exactamente el calendario de citas. He estado haciendo pruebas en un entorno separado, y he planteado como lo voy a hacer exactamente. En el calendario original estaba pensado para que simplemente enviara un e-mail al gestor de las citas, para agendar la cita de forma manual. Pero no estamos para eso, queremos que se haga completamente automáticamente. Para ello, he decidido implementar un identificador único a cada cita. De esta forma, cuando el cliente haya bloqueado la cita mediante la API, podrá cancelarla simplemente introduciendo el identificador que le llegará por correo electrónico. Por un lado, el formulario realizará una petición a la API dónde escribirá la información del cliente y el identificador de la cita. En la parte del front-end, crearé un iterador que solo muestre las citas que están vacías, por lo tanto, que se pueden reservar. Voy a utilizar hora UTC para estandarizar los rangos de horas. Podría ser, que la cita se concretara desde otro país, y para esclarecer la hora exacta prefiero utilizar UTC y luego convertirla a local.
+
+Debido a una petición de una correción urgente, he tenido que parar el proyecto para hacer unos cambios en el UX de la página de actividades. Me quedan unas horas de jornada, así que aprovecharé para avanzar todo lo posible en la API en NodeJs usando ExpressJs. Cuando la tenga lista, podré integrarla al front-end. Estimo poder tener acabada esta funcionalidad durante el día de mañana. 
+
+Una vez implementeda, explicaré con detalles el funcionamiento del calendario de citas con recortes, así cómo escribiré el Readme por si otro desarrollador decide utilizar la plantilla que adaptado con las nuevas funcionalidades.
+
+Seguimos machacando teclas :D!
+
+
 ## Reto de programación, día 18/100. 
 
 Hoy va a ser un gran día. Por fin empezaremos con las funcionalidades que no venían de serie en la plantilla.
