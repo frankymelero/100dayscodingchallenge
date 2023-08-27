@@ -1,5 +1,47 @@
 # 100 days coding challenge
 
+## Reto de programación, día 22/100. 
+
+Hoy es domingo, pero no es un domingo cualquiera. Las temperaturas han bajado de forma drástica, hace tan solo tres días no se podía estar en el escritorio sin ventilador. Con la ventana cerrada, y algo abrigado empiezo el vigesimo primer día del reto.
+
+Ayer por la tarde, tuve una conversación con un compañero programador. Estuvimos hablando sobre la estructura de la API, pero también sobre el futuro de este reto. He de reconocer, que mi compañero tenía razón en algo, y es que debería priorizar la publicación de mi portfolio antes que nada. Tenía intención de acabar los detalles que quedan una vez la API estuviera desplegada, y la funcionalidad del calendario corriendo sin problemas, pero haré caso a mi compañero y acabaré primero el portfolio.
+
+Antes de explicaros el proyecto del portfolio, que dista de ser un portfolio más, me gustaría hacer una reflexión sobre la estructura de la API que he programado. Al utilizar un ORM, la estructura debe ser definida antes de empezar a tocar una linea de código. En este caso, he empezado a programar una API que tiene las siguientes capas:
+
+1 - Rest controller, que maneja las rutas.
+2 - Service que hace de middleware entre el rest controller y la capa de persistencia, incluyendo tambien una clase que servirá como plantilla.
+3 - La capa de persistencia que hace las solicitudes a la BD tomando referencia de la clase, y en función de el flujo del service realiza una cosa, u otra.
+
+Cuando se envia la petición, la request pasa por estas capas hasta llegar dónde debe. La respuesta se hará a la inversa, siendo el rest controller la última capa de la API en la respuesta. Un punto a favor del ORM, es que te obliga a utilizar un sistema basado en POO. Tras leer el libro del tito Martin sobre agile, me veo preparado para utilizar los principios básicos del código limpio en POO. Podré enseñaros un ejemplo de la API, así como facilitaros una URL para que podáis probarla durante la semana que viene.
+
+Como he comentado inicialmente, voy a centrarme en acabar mi web portfolio primero. El portfolio lo empecé a desarrollar antes de iniciar el reto. He utilizado React, como framework front-end para construirlo.  
+
+Inicialmente, había construido un index que te permitiera elegir el idioma, en función del idioma elegido te enviaba a una sección donde tenías que introducir el "nombre del piloto". Ya entenderéis más tarde por qué. 
+
+(La página correspondiente a la raíz del proyecto ("/")).
+![Snap 26 plantilla SPA](/imagenes-readme/captura26.JPG)
+
+(La página correspondiente a la introducción del nombre del piloto, en función del idioma seleccionado).
+
+![Snap 27 plantilla SPA](/imagenes-readme/captura27.JPG)
+
+El formulario tiene una validación basada en expresiones regulares para limitar el input introducido, por lo que hay que introducir el nombre en un formato correcto. De forma reactiva, capturando el evento change,  activa o desactiva el botón que permite pasar al portfolio, y manda los datos como props para que se muestren en la siguiente pantalla:
+
+![Snap 28 plantilla SPA](/imagenes-readme/captura28.JPG)
+
+Como se puede observar en el anterior snap, la aplicación es algo más que un simple portfolio. 11 años trabajando en el sector de la aviación, me han inspirado para hacer este tipo de página. La aplicación simula el aterrizaje de un avión en un aeropuerto, de forma que cada x aparece una sección con información sobre lo que he ido haciendo durante estos años. Para navegar por el portfolio, se utiliza la ruleta del ratón, simulando el descenso de un avión hacia una pista de aterrizaje. Una vez el avión aterriza, aparece un formulario de contacto como muestro a continuación:
+
+![Snap 29 plantilla SPA](/imagenes-readme/captura29.JPG)
+
+Hay varios detalles técnicos que debo tener en cuenta para acabar el portfolio. Por un lado, el responsive para dispositivos móbiles y tablets es bastante dificil de aplicar, y poco intuitivo una vez se utiliza en resoluciones menores. No estoy seguro de la forma en la cual voy a afrontarlo, pero de lo que si que estoy seguro es que lo solventaré de una forma u otra. Sería mucho más sencillo crear otro tipo de plantilla para las resoluciones menores, pero rompería de alguna forma el diseño original. 
+
+Tras darle unas vueltas, he llegado a la conclusión que no quiero tener dos páginas diferentes que se carguen en función del dispositivo. Aun que sería una solución más facil de aplicar, entiendo que es mejor mantener la idea original. Para poder llevar a cabo mi plan, tendré que realizar una modificación para versiones de resolución menor. En este caso, añadiré un botón que simulará el acelerador de un avión. Conforme suba la intensidad de aceleración, el avión hará una animación más rápida o más lenta hasta el siguiente punto de control, donde se pausará para elegir continuar, o ir para atrás. Es lógico que en la vida real esto no pasa, cuando un avión aterriza, es imposible que haga el movimiento contrario, pero para el portfolio es importante que se pueda navegar por todas las secciones, y en un momento dado, regresar a la sección anterior. 
+
+Soy consciente que para llevar a cabo el plan, tendré que dedicarle muchas horas a los pequeños detalles, pero es algo que no me asusta. Sarna con gusto, no pica :D.
+
+¡Seguimos machacando, mañana más!
+
+
 ## Reto de programación, día 21/100. 
 
 Ayer planteamos el problema, y posibles soluciones, así como empezamos a programar la API. 
@@ -13,8 +55,6 @@ Antes de instalar Sequalizer en el proyecto, y de crear la lógica de negocio, v
 Sigo formandome, y realizando pruebas para poder gestionar de una mejor forma la API, aunque de alguna manera, no es realmente necesario para el uso que va a tener.
 
 ¡Continuamos!
-
-
 
 ## Reto de programación, día 20/100. 
 
