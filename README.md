@@ -1,5 +1,33 @@
 # 100 days coding challenge
 
+## Reto de programación, día 21/100. 
+
+Ayer planteamos el problema, y posibles soluciones, así como empezamos a programar la API. 
+
+Hoy toca continuar con exactamente lo mismo. Me gustaría que esta API demostrará bien los conocimientos que he ido adquiriendo durante los dos ultimos años. Para ello he tomado una decisión, que cambiará ligeramente el curso del desarrollo.
+
+Para securizar aún más, realizar mejores consultas y de una forma más eficiente, he pensado utilizar un ORM de SQL. Hasta ahora, había trabajado con mongoose para gestionar noSQL, y no había utilizado un modelo ORM con SQL en Node. He visto que hay varias opciones válidas, y aunque el ORM Prisma está ganando mucha fuerza en el mercado, he tomado la decisión de utilizar Sequalizer. 
+
+Antes de instalar Sequalizer en el proyecto, y de crear la lógica de negocio, voy a realizar varias pruebas en local durante el día de hoy, y posiblemente de mañana también. Mi intención es crear un sistema que pueda ser utilizado en un entorno de alta demanda, por lo que bajo mi punto de vista, es idoneo utilizar TDD para el desarrollo de la API. Para realizar los tests, he instalado Jest ya que estoy bastante familizarizado con la forma de escribir los tests con esta herramienta.
+
+Sigo formandome, y realizando pruebas para poder gestionar de una mejor forma la API, aunque de alguna manera, no es realmente necesario para el uso que va a tener.
+
+¡Continuamos!
+
+
+
+## Reto de programación, día 20/100. 
+
+Comenzamos la jornada dónde la dejé ayer. Empezamos a crear la estructura de la API. Hasta ahora, las API que he desarrollado han tenido diferentes estructura, por lo que voy a hacer varias pruebas antes de continuar con un camino. 
+
+Actualmente, tengo un servicio de base de datos pre-configurado para ser conectado a la API. Mi intención es guardar todas las citas reservadas en la BD. Podría hacer un registro para cada margen de hora, y simplemente llamarlo con el metodo put para añadirle el localizador, pero creo que va a ser más eficiente que lo haga al revés. El front-end, a través de una petición GET recibirá las horas ocupadas, y mediante un bucle mostrará las horas que no lo están. Por otro lado, quiero añadir una pequeña capa de seguridad a las horas bloqueadas, para evitar que se puedan modificar libremente. 
+
+Mi intención es usar Auth2 conectado a la API de google para recibir los datos del usuario, y así permitir solo la edición de los datos que vayan enlazados a una cuenta de correo. Por otro lado, crearé varios endpoints para realizar modificaciones que solo puedan devolver datos a quién tenga un token válido. En este caso, predefiniré una dirección de e-mail, que recibirá el TOKEN una vez se haga la llamada a un endpoint en concreto. El token tendrá una caducidad baja, por lo que cada vez que se quieran modificar los datos en distintos días, el administrador tendrá que repetir el proceso de verificación. 
+
+Una vez planificada la funcionalidad, empiezo a programarla. Durante los próximos días, la subiré al repositorio para que podáis ver como está hecha. Por otro lado, utilizaré variables de entorno para securizar los datos, y de esta forma evitar que mediante la lectura del código subido a github se pueda acceder a la bbdd.
+
+¡Seguimos avanzando!
+
 
 ## Reto de programación, día 19/100. 
 
