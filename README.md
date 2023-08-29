@@ -1,5 +1,37 @@
 # 100 days coding challenge
 
+## Reto de programación, día 24/100.
+
+Ni te cases, ni te embarques. Quien entiende, entendió.
+
+Antes de continuar con el portfolio, voy a hacer una edición en mi perfil de Git. Desde hace un tiempo, si le pones de nombre a un repositorio como tu usuario, se muestra el README en tu perfil. Para las imagenes de mi stack tecnológico, voy a utilizar iconfinder.com.  
+
+
+![Snap 30 plantilla SPA](/imagenes-readme/captura30.JPG)
+
+Este diseño lo he hecho con simple markdown, y agregando a un paragrafo centrado para iconos. Una vez acabado, continúo con el portfolio. 
+
+Mi intención de hoy, es dejar la primera caja acabada, y dar un repaso a las demás. Antes de ponerme a editar el diseño ya existente, voy a escribir el apartado "sobre mí". 
+
+Con el texto ya escrito, procedo a mejorar el diseño de la caja:
+![Snap 31 plantilla SPA](/imagenes-readme/captura31.JPG)
+
+La diferencia con el antiguo diseño es claro. Ahora el contenido es más legible. He decidido crearle un div interior y personalizar la barra de scroll para darle un toque fancy :D
+
+He creado unos cards para enlazar mis proyectos, he añadido dos proyectos para ver como quedaba, pero debo darle una vuelta... Me gustaría incluir más información e implementar swipper, mañana valoraré las opciones que tengo.
+
+![Snap 31 plantilla SPA](/imagenes-readme/captura32.JPG)
+
+Adicionalmente, he creado una sección interactiva donde puedes pasar entre la experiencia laboral y la formación académica. De momento no he añadido ningún contenido, pero así está quedando:
+
+![Snap 31 plantilla SPA](/imagenes-readme/captura33.JPG)
+
+Para esta parte del diseño, voy a probar de la nueva funcionalidad de CSS que te permite animar el display.
+
+Lo dejo por hoy, mañana continuaré perfilando más detalles del portfolio. 
+
+¡Seguimos!
+
 ## Reto de programación, día 23/100. 
 
 Empezamos la semana con un par de tazas de café. Como comenté ayer, voy a centrarme en acabar mi web portfolio antes de implementar la API en la plantilla. El portfolio lo empecé a desarrollar antes de iniciar el reto, pero hay bastantes detalles que he de corregir. Utilicé React, como framework front-end para construirlo, así que para este proyecto utilizaré una tecnología diferente. 
