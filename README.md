@@ -1,5 +1,38 @@
 # 100 days coding challenge
 
+## Reto de programación, día 25/100.
+
+Empezamos el día 25 con muchas ganas de trabajar...
+
+... y menos mal.
+
+A primera hora, después de un café con leche amargo (no porque lo que me esperaba después sería duro, qué también, más bien porque no había azucar 😢) recibí un e-mail con los cambios que debía realizar de la página de la AMCL.
+
+Una vez realizados, anoté un par de cambios que podrían mejorar el feature cara a la experencia del usuario. A las 12.00 tenía reunión con un grupo de compañeros freelance después de unas semanas de vacaciones. Estamos en la fase final del desarrollo de  una página en Nuxt para una peluquería. Después de la reunión, nos dividimos las tareas pendientes y nos pusimos manos a la obra.
+
+Tras 7 horas programando, una manzana, un baño, y un paseo, continuo con el portfolio. 
+
+En lo que me queda de día tengo intención de realizar algun cambio en la primera caja, así como añadir los íconos de habilidades para la segunda. Empezamos con la caja:
+
+![Snap 31 plantilla SPA](/imagenes-readme/captura31.JPG)
+
+Ayer realizamos unos cambios que mejorarían la primera version de la página. Antes de irme a dormir se me ocurrió añadir tanto mi nombre, como un par de iconos que servirán de enlace a mi linkedin y github:
+
+![Snap 31 plantilla SPA](/imagenes-readme/captura34.JPG)
+
+Adicionalmente le he añadido un borde con poca opacidad para que se vea la foto y utilizarlo así como un marco. Ahora es hor de ponerme con los iconos de las tecnologías que más domino. Me gustaría que los iconos fueran de color, por lo que descarto iconfinder, por suerte los encuentro en pngwing.
+
+He añadido un filtro de grises medio a los iconos, que se elimina con el hover. Jugando con el flex-direction y con la estructura padre-hijo, he podido animar el texto de las descripciones de cada lenguaje solo con CSS. 
+
+
+![Snap 31 plantilla SPA](/imagenes-readme/captura35.JPG)
+![Snap 31 plantilla SPA](/imagenes-readme/captura38.JPG)
+
+
+Lo dejo por hoy, tengo una idea sobre la siguiente sección, mañana la llevo a cabo y os muestro los cambios planificados.
+
+Keep coding, and coding, and coding... 
+
 ## Reto de programación, día 24/100.
 
 Ni te cases, ni te embarques. Quien entiende, entendió.
@@ -14,6 +47,7 @@ Este diseño lo he hecho con simple markdown, y agregando a un paragrafo centrad
 Mi intención de hoy, es dejar la primera caja acabada, y dar un repaso a las demás. Antes de ponerme a editar el diseño ya existente, voy a escribir el apartado "sobre mí". 
 
 Con el texto ya escrito, procedo a mejorar el diseño de la caja:
+
 ![Snap 31 plantilla SPA](/imagenes-readme/captura31.JPG)
 
 La diferencia con el antiguo diseño es claro. Ahora el contenido es más legible. He decidido crearle un div interior y personalizar la barra de scroll para darle un toque fancy :D
