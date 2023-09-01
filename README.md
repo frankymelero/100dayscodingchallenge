@@ -1,5 +1,49 @@
 # 100 days coding challenge
 
+## Reto de programación, día 26/100.
+
+Llegamos al ecuador de la semana, una semana ajetreada, pero esto no para.
+
+Ayer dejamos lista la sección de los íconos que representan las tecnologías que utilizo. Hoy toca ajustar las siguientes dos secciones. Como comenté ayer, tuve una idea para mejorar las cards. Al principio se cargaban todas manualmente, ya que eran componentes que se llamban en el código directamente. Pero si lo hacemos así, no estaríamos aprovechando todo el potencial que tiene para ofrecer React. En lugar de dejarlo así, he cargado los componentes mediante el map de una array de objetos que contiene la info. De esta forma, para añadir un nuevo card solo es necesario añadir la información al array de objetos. Por otro lado, he modificado el diseño drasticamente, y añadido un efecto hover sobre los cards. Adicionalmente, he implementado la lógica de un carousel para que se pueda desplazar entre los diferentes proyectos, y funcione todo de manera automática. Ahora si quiero añadir un proyecto, solo tengo que añadir un registro nuevo al array, y automáticamente lo añadirá al final, o al principio del carousel.  
+
+A continuación os muestro un snap de como ha quedado la sección con todos los cambios aplicados:
+![Snap 36 plantilla SPA](/imagenes-readme/captura36.JPG)
+
+Como podéis observar, he limitado la aparición de 1 card por pantalla. Por otro lado, los cambios del diseño son significativos como comentado anteriormente. Las imagenes de los trabajos realizados las he creado con una página que está realmente bien: shots.so. Con esta página se pueden hacer este tipo de imagenes con diferentes dispositivos, fondos etc... y lo mejor, totalmente gratis. 
+
+Después de testear el nuevo carousel de forma satisfactoria, me dispongo a continuar con la siguiente parte:
+
+![Snap 33 plantilla SPA](/imagenes-readme/captura33.JPG)
+
+De esta sección hay varias cosas que me chirrían. Por un lado, no está formateado el contenido, solo está creado un card con un paragrafo dentro. Me gustaría poder hacer algo similar a con el carousel, es decir, cargar el contenido de forma dinámica. Para ello, quiero utilizar props desde la página donde se carga el componente para poder añadirle la info que tendrá dentro.
+
+Primero de todo, formateamos y creamos la estructura para recibir props. Para la parte de la descripción de cada trabajo/estudio, he pensado crear unos bullet points con un listado desordenado. ¿Cómo pasaré los diferentes bullet points, si desde el prop no puedo utilizar código html? Muy sencillo, por el prop le pasaré una array con el contenido que quiero añadir. En el componente, iteraré la array recibida por props y asignaré cada item a un li. De esta forma, puedo enviar en tan solo un prop, contenido que puede variar de estructura. Por ejemplo. si quiero tan solo poner 2 bullet points, añado solo 2 elementos al array que paso por props, y así sucesivamente... De esta forma, me aseguro que el contenido es modular, y puedo añadir o quitar tantos bullet points como quiera sin tener que cambiar la lógica detrás.
+
+Finalmente el componente quedó así:
+
+![Snap 31 plantilla SPA](/imagenes-readme/captura39.JPG)
+
+Como podéis ver, he formateado el texto y creado un div interior para poder hacer scroll y se ajuste dentro de la caja. Por otro lado, he modificado el diseño ligeramente para que tenga más sentido conforme las otras secciones, y sobretodo, para que se pueda leer y entender bien el texto que está dentro del componente. He hecho la misma lógica en experience que en Education, la diferencia es que los props que entran son diferentes, por lo que he separado la lógica en dos componentes, uno llamado Education Card y otro Experience Card. Una vez he añadido todo el contenido, puedo decir que esta sección queda acabada pendiente del responsive general de la web. 
+
+Continuamos ahora con Contacto. No tenía pensado llegar a tocar contacto, pero he podido arreglar el resto a tiempo por lo que vamos a ello:
+
+
+![Snap 40 plantilla SPA](/imagenes-readme/captura40.JPG)
+
+He mantenido la misma estrctura que antes, nombre e-mail y mensaje. Con más datos pidas en un formulario, menos posibilidades hay de que alguien lo utilice, por eso me limito solo a pedir nombre y e-mail. He ajustado un poco el diseño para que sea más elegante, aunque hay alguna cosa que pulir.
+
+Antes de aplicarle la lógica para que envie un e-mail, me gustaría crear una sticky box que aparezca en función del error recibido, o notificación que quiero hacer al usuario, ya que quiero manejar los errores mediante esta sticky box, así podrá ver el usuario de una forma visual si se ha equivocado en el formulario, o si hay alguna acción requerida (ya entederéis esto por que más tarde). Mi idea es dejarlo listo como un componente, y pasarle el color y el contenido por props para utilizar el mismo componente con diferentes tipos de alerta. 
+
+He creado el sticky que se anima conforme aparece, y he seteado un timer. En el caso que el ratón no se mueva durante 3 segundos, he configurado una alerta de color gris que indica como tiene que continuar, aquí dejo el snap:
+
+![Snap 41 plantilla SPA](/imagenes-readme/captura41.JPG)
+
+Una vez el usuario se desplaza con la rueda del ratón, el aviso desaparece. Ahora me tocará aplicarle la lógica del envío del email, y manejar los errores con el sticky, pero por hoy ya es suficente. Mañana continuamos con esto, por otro lado me gustaría refinar un poco más el diseño del formulario, y ya me pondría con el responsive! Va a ser la parte quizás más complicada, pero una vez esté lista, por fin podré desplegar el portfolio y dedicarme a otra cosa. Tengo todavía que aplicar la funcionalidad de las reservas en la plantilla del spa. Cuando acabe lo que estoy haciendo actualmente, me pondré con ello. Considerando que estaré poco tiempo con la funcionalidad, ya tengo pensado cual será el próximo proyecto: Un pequeño modulo en node que te permita crear un arbol gráfico de los directorios del proyecto, de forma modular para que puedas decirle que es lo que no quieres que te incluya.
+
+Keep coding till your fingers bleed!
+
+
+
 ## Reto de programación, día 25/100.
 
 Empezamos el día 25 con muchas ganas de trabajar...
