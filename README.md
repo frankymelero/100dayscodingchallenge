@@ -3,7 +3,7 @@
 
 ## Reto de programación, día 29/100.
 
-Hoy es martes, no tengo café en la despensa, y lo tengo claro: no voy a empezar el día hasta que metome mi taza.
+Hoy es martes, no tengo café en la despensa, y lo tengo claro: no voy a empezar el día hasta que me tome mi taza.
 
 Tras una visita al super, y una taza de café, continúo con el portfolio. Lo primero en lo que me quiero enfocar, es apañar el responsive. Soy consciente que hay muchos detalles que requieren de bastante tiempo para solventarlos, no busco la perfección ahora mismo, sino poder mostrar mi primera versión viable de portfolio. Por ello, no voy a ser tan meticuloso a la hora de ajustar el responsive, pero eso no quiere decir que se vaya a quedar así. Como comenté días anteriores, mi intención es dejarlo lo más optimizado, y con menos fallos gráficos posible antes de acabar el reto, pero tengo otros proyectos que abordar antes de que eso pase. 
 
