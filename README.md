@@ -1,7 +1,7 @@
 # 100 days coding challenge
 
 
-## Reto de programación, día 29/100.
+## Reto de programación, día 30/100.
 
 Hoy es martes, no tengo café en la despensa, y lo tengo claro: no voy a empezar el día hasta que me tome mi taza.
 
