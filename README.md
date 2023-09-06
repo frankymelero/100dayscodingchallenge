@@ -1,5 +1,92 @@
 # 100 days coding challenge
 
+
+## Reto de programación, día 29/100.
+
+Hoy es martes, no tengo café en la despensa, y lo tengo claro: no voy a empezar el día hasta que metome mi taza.
+
+Tras una visita al super, y una taza de café, continúo con el portfolio. Lo primero en lo que me quiero enfocar, es apañar el responsive. Soy consciente que hay muchos detalles que requieren de bastante tiempo para solventarlos, no busco la perfección ahora mismo, sino poder mostrar mi primera versión viable de portfolio. Por ello, no voy a ser tan meticuloso a la hora de ajustar el responsive, pero eso no quiere decir que se vaya a quedar así. Como comenté días anteriores, mi intención es dejarlo lo más optimizado, y con menos fallos gráficos posible antes de acabar el reto, pero tengo otros proyectos que abordar antes de que eso pase. 
+
+Después de realizar ajustes, y utilizando media queries he podido solventar minimamente la vista en diferentes dispositivos. Estamos a mitad de jornada, espero poder acabar las descripciones de mi experiencia/formación durante el día de hoy.
+
+Una vez escrita la información, voy a comprar el dominio y enlazarlo mediante DNS. Si queréis visitar el portfolio, ya podéis acceder a él mediante la siguiente url:
+
+ fmelero.dev 
+
+Mañana retomaré la busca de empleo, por lo que voy a acabar acabar de revisar los detalles de mi CV. Por otro lado, dedicaré la tarde a ajustar la funcionalidad pendiente en la plantilla. El siguiente proyecto será un paquete de npm para poder mostar el arbol de archivos del proyecto actual de forma personalizada.
+
+Keep coding till your fingers bleed!
+
+
+## Reto de programación, día 29/100.
+
+Después de recargar pilas, continuamos, aunque hoy me tocará hacer algo especial.
+
+El día de hoy empieza a funcionar la web de la peluquería. Con el primer uso, vienen los primeros cambios. 
+
+Tenemos que adaptar el sistema para que lo pueda utilizar un iphone, sin hacer del mail de las reservas su mail principal. Por otro lado, hay que hacer un cambio en la forma que estamos mostrando el contenido en la galeria y el index. 
+
+Para el primero simplemente hemos enlazado los calendarios. El segundo, es más complicado. Queremos evitar enviar demasiadas peticiones a la API de instagram, por lo que cargaremos las imagenes/reels de forma local. Uno de los features de la web es que se actualizan las fotos que suba en instagram en su página web. Para emular este comportamiento, he pensado hacer un cron job que triggee el script que nos interesa para actualizar las fotos comparando las fotos que tenemos, con las nuevas recibidas en la petición. De esta forma limitaremos a solo 2 peticiones diarias y no sobrecargaremos la API. 
+
+Después de plantear el problema y la posible solución, nos ponemos manos a la obra. Una vez hecha la parte que tenía esperada para hoy, utilizaré el resto del día para perfeccionar mi nueva plantilla de CV. 
+
+Mañana más, finalmente podremos actualizar el contenido, arreglar pequeños aspectos del responsive y publicar la página con mi dominio.
+
+¡Seguimos!
+## Reto de programación, día 28/100.
+
+Sabado sabadete, uhm.. Quiero decir...
+
+Empezamos el día con ganas, ganas de programá mal pensad@.
+
+ El lunes la página de la peluquería debe estar impoluta tal y como ha querido el cliente, ya que se empieza a utilizar para realizar las reservas de las citas. Hay un varias pequeñas modificaciones de ultima hora que nos ha pedido, así que me pongo con un par de ellas y podré continuar con el portfolio.
+
+Después de realizar los cambios, y de repasar la página, continúo con el portfolio. 
+
+Hoy puedo dedicarle 12 horas sin problema, mi intención es dejarlo acabado a la espera de comprar el dominio. Mañana tengo intención de descansar, así que hoy debo aprovechar el tiempo.
+
+Empiezo con el responsive mobile. Me encuentro con varios problemas de base. Teniendo en cuenta que la página me ha obligado a modificar manualmente el scroll de forma horizontal para tener que simular el aterrizaje de un avión, el primer problema que se me plantea es que debo crear una regla para modificar el comportamiento del scroll con resoluciones mobile. Sería demasiado facil de solucionar creando un condicional que se dispare cuando la resolución es menor a la indicada, pero eso solo nos estaría dando los valores de la ventana cuando la aplicación se inicia, si queremos redimensionar la pantalla esta solución no me serviría. Para arreglarlo, he capturado el evento de la redimensión que guarda en un estado de tipo objeto el ancho y alto de la página. Tras una pequeña refactorización del código, ahora puedo cambiar el scroll para que funcione condicionalmente, en función del tamaño de la ventana. 
+
+Todas las diferentes secciones que representan las páginas, están dentro de una clase pagina, lo que me hace más fácil adaptarlo a una vista mobile. Quiero que la vista sea parecida al contenido que tengo en la página de desktop, pero logicamente sin el aterrizaje del avión, ya que sería muy dificil leer el contenido. Otra cosa es cuando la orientación del móvil es "landscape", en ese caso si que puedo implementar una versión parecida a la de desktop, pero es algo que ahora mismo no puedo priorizar, ya que debo sacar la minima versión viable de la página. Antes de acabar el reto, tengo claro que arreglaré los detalles que quedan para que la página acabe de capturar lo que quiero trasmitir.
+
+A las tantas de la noche puedo escribir, aquí tenéis. La primera versión de mi portfolio en mobile:
+
+![Snap 36 plantilla SPA](/imagenes-readme/captura46.JPG)
+![Snap 36 plantilla SPA](/imagenes-readme/captura47.JPG)
+![Snap 36 plantilla SPA](/imagenes-readme/captura48.JPG)
+![Snap 36 plantilla SPA](/imagenes-readme/captura49.JPG)
+![Snap 36 plantilla SPA](/imagenes-readme/captura50.JPG)
+
+Ahora me toca descansar después de 7 días intensos. Mañana dejaré el ordenador de lado, pero el Lunes volveré con las pilas recargadas :D
+
+Estoy cuñao ultimamente...
+Ciao pescao, buen finde.
+
+## Reto de programación, día 27/100.
+
+Se acerca el fin de semana, aunque este fin de semana no prevee ser tranquilo precisamente...
+
+Continuo con el portfolio. Ayer dejamos por implementar la lógica del envío de e-mails para el formulario de contacto, y el manejo de los errores con avisos insertados en sticky boxes animadas. Pero antes, me gustaría empezar con un poco de CSS: 
+
+![Snap 36 plantilla SPA](/imagenes-readme/captura45.JPG)
+
+Tras retocar el formulario, me dispongo a implementar la lógica del envío de e-mails. Tengo intención de utilizar emailjs ya que el límite de correos electrónicos diarios me parece más que correcto para el uso esperado del formulario. Las ventaja de email js es que es muy sencillo de configurar y de utilizar. Simplemente después de setear la plantilla, y el servicio desde su página web, realizas una petición incluyendo la estructura del contenido que hayas elegido como variables en la plantilla y manejas los errores por si existiera algún tipo de problema.
+
+En este caso, he implementado ref para utilizar los datos tecleados por el usuario, luego he implementado una validación con expresiones regulares para los tres campos, y para acabar si el formato de los datos es válido lo envía en la petición. 
+
+Considerando que tengo que manejar los errores tanto de respuesta, como de introducción de datos por parte del usuario, pero tambien quiero mostrar el sticky cuando la respuesta es 200, he implementado dos estados que contienen el color y el texto del sticky. De esta forma, en función de la acción que ocurra, se mostrará un texto diferente con un color previamente definido. Como es logico, utilizo el rojo para los errores y el verde para cuando el e-mail es enviado correctamente.
+
+![Snap 36 plantilla SPA](/imagenes-readme/captura42.JPG)
+![Snap 36 plantilla SPA](/imagenes-readme/captura43.JPG)
+
+Como la validación de datos ha resultado favorable, hemos recibido el e-mail como esperabamos:
+
+![Snap 36 plantilla SPA](/imagenes-readme/captura44.JPG)
+
+Por hoy lo dejo para ir a ensayar, como un cuñao me despido:
+
+Con esto y un bizcocho cerramos el chiringuito por hoy.
+
 ## Reto de programación, día 26/100.
 
 Llegamos al ecuador de la semana, una semana ajetreada, pero esto no para.
