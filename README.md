@@ -1,6 +1,65 @@
 # 100 days coding challenge
 
+## Reto de programación, día 34/100.
 
+Este fin de semana ha sido tranquilo con la mujer en casa. Aunque hay una noticia que despertó mi curiosidad, y me ha movido a empezar una idea nueva.
+
+Una noticia de un medio bastante sensacionalista, describía como un asteroide podría colisionar con la tierra el 22 de septiembre de este año. Como no me gusta ser alarmista, y sobre todo, creerme cualquier cosa que veo por internet, fui directamente a la página de la NASA para ver más información. Allí validé que no tan solo no era cierta la noticia, ya que la probabilidad de impacto de el objeto es casi nula, sino que se puede acceder a los datos del Sentry de la NASA mediante su API. 
+
+Después de perderme durante un buen rato en la documentación, he decidio hacer una pequeña página web donde puedas consultar esos datos de forma algo más visual. Estimo que esta página la podré acabar relativamente rápido, en unos 2-3 días. Una vez la acabe dedicaré el resto de la semana para poder acabar la plantilla. 
+
+Para el diseño de la página, he pensado utilizar Three.js para simular una lluvia de asteroides. Es la primera vez que voy a utilizar la librería, por lo que me basaré en varios ejemplos y lo personalizaré a mi gusto. No he podido encontrar ningun ejemplo en el fw que estoy utilizando, pero me basaré en el script realizado en js vanilla. Después de una horita, he podido configurar correctamente la librería en Nuxt y he creado una primera versión de la animación. Como el comportamiento no era del todo el esperado, he variado ciertos ajustes para que quedara como quería. Por último he añadido una imagen de asteroide para sustituir los puntos que habían creados inicialmente, de esta forma el efecto es algo más realista. 
+
+![Snap 51 plantilla SPA](/imagenes-readme/captura51.JPG)
+
+Continúo agregandole algo de texto, y voy a crear un componente asteroide y donde le cargaré los datos recogidos por el fetch a la API de la NASA. 
+
+Después de unas horas, he cargado los datos y he implementado varios filtros. Por otro lado, estoy cargando una imagen en función de la dimensión del asteroide. 
+
+El resultado de momento es este:
+
+![Snap 52 plantilla SPA](/imagenes-readme/captura52.JPG)
+
+Mañana continuaré ajustando los filtros y haré una página para describir más datos de cada asteroide y las posibles colisiones. Por otro lado, me gustaría hacer un sistema automático de texto que en función de varias condiciones se cargue una descripción u otra.
+
+¡Por hoy es suficiente, mañana más!
+
+## Reto de programación, día 33/100.
+
+Me gustaría acabar la semana con una reflexión. Desde que volví al paro, de momento no he conseguido más que una entrevista teléfonica fallida. Hoy en día es complicado acceder al mercado laboral si tienes una situación parecida a la mía, pero si crees en algo firmemente, no puedes dejar que eso te pare, todo lo contrario. A estas alturas del camino, estoy más motivado que nunca, porque veo todo lo que he avanzado, y soy más que consciente de todo lo que podría aportar a cualquier empresa que me diera la oportunidad. Esta situación no va a hacer que frene, de hecho, está consiguiendo que me esfuerze el doble para llegar. Incluso si voy a contrareloj, para mí este camino no es una opción, es lo que quiero y no voy a parar de andar hasta estar en el sendero.
+
+Fuera de reflexiones, hoy empezaré el curso de buenas prácticas de JS.  
+
+Después de tres horitas de curso, puedo hacer una reflexión parecida al primer curso que hice, ya que la mayoría de conceptos ya los conocía. De todas formas, también he podido sacar cosas en positivo. 
+
+El resto del día tengo qu dedicarlo a realizar unos ajustes relacionados a los backups y hacer una migración en la web de la AMCL. 
+
+Continúamos para bingo!
+
+## Reto de programación, día 32/100.
+
+Estamos a mitades de semana, esta semana descansaré tanto sábado como domingo por compromisos, por lo que es el penultimo día habil.
+
+Ayer estuve haciendo el curso de javascript esencial, voy a empezar a hacer los ejercicios que ofrecen de javascript básico. En lugar de hacerlos directamente, voy a utilizar JEST para crear unos tests que me permitirán asegurar que estoy haciendo lo que se me pide. Usaré la metodología TDD, es decir, primero crearé el test, y luego crearé el código necesario para que el test pase. De esta forma, si quisiera refactorizar el código tendría unos tests de soporte que asegurarían la funcionalidad del mismo. Para este tipo de ejercicios, quizás no es necesario, pero siempre es una buena práctica para coger más soltura escribiendo tests.
+
+Antes de acabar el día, he conseguido realizar seis ejercicios. Los enlazaré a GitHub una vez los acabe todos. Mañana tengo intención de realizar algún otro curso de JS más avanzado, creo que empezaré con el de buenas prácticas. 
+
+Wake up, and code, you lazy human.
+
+
+## Reto de programación, día 31/100.
+
+Otro día más, continuamos con el reto.
+
+Hoy tengo pensado dedicar el día a formarme, debido a que he empezado la prueba del premium de linkedin, me gustaría hacer algún curso simplemente para fortalecer mis bases. He visto que hay algun itinerario marcado, así que de momento empezaré con el primer curso de todos.
+
+Cuando hago cursos, me gusta transcribir todo lo que se explica para tener por un lado el material, y por otro para entenderlo mejor. Después de unas 6 horas, he podido completar el primer curso de JS esencial. La verdad es que tenía bastante claro casi todos los conceptos desde un principio, pero he aprendido un par de detalles que ya hace que merezca la pena haber hecho el esfuerzo.
+
+A partir de aquí, he visto que ofrecen unos ejercicios básicos para practicar. Para que todo esto tengo sentido, me gustaría realizarlos poco a poco.
+
+Mañana empezamos con los ejercicios.
+
+Keep pushing and pushing!
 ## Reto de programación, día 30/100.
 
 Hoy es martes, no tengo café en la despensa, y lo tengo claro: no voy a empezar el día hasta que me tome mi taza.
@@ -13,7 +72,7 @@ Una vez escrita la información, voy a comprar el dominio y enlazarlo mediante D
 
  fmelero.dev 
 
-Mañana retomaré la busca de empleo, por lo que voy a acabar acabar de revisar los detalles de mi CV. Por otro lado, dedicaré la tarde a ajustar la funcionalidad pendiente en la plantilla. El siguiente proyecto será un paquete de npm para poder mostar el arbol de archivos del proyecto actual de forma personalizada.
+Mañana retomaré la busca de empleo, por lo que voy a acabar acabar de revisar los detalles de mi CV. 
 
 Keep coding till your fingers bleed!
 
