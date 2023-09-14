@@ -1,5 +1,32 @@
 # 100 days coding challenge
 
+## Reto de programación, día 37/100.
+
+Otro día más de reto, hoy tengo previsión continuar con la página de los asteroides. Para empezar implementaré la lógica que falta y dejaré un primer diseño aplicado. 
+
+Primero me conecto a la API mediante el proxy que hice ayer, y traigo los datos a la página mediante una función asíncrona. La respuesta de la llamada a mi API, me devuelve un array de array de objetos. En este caso, me interesa seleccionar dos categorías, así que creo dos objetos para asignarle el valor una vez recibamos los datos.
+
+Después de construir los objetos y pasarles la data, es hora de crear un grid para almacenar las caracteristicas. Por otro lado, he creado una tabla para mostrar la información de cada impacto. 
+
+Una vez que todos los datos han sido seteados, me dispongo a refinar el diseño. 
+
+Siempre es dificil estar contento con un diseño, pero para la primera versión de la página me doy minimamente por satisfecho. Aquí el resultado hasta ahora:
+
+Landing page, primer estado: 
+
+![Snap 55 plantilla SPA](/imagenes-readme/captura56.JPG)
+
+Landing page, contenido:
+
+![Snap 55 plantilla SPA](/imagenes-readme/captura57.JPG)
+
+Vista del Objeto próximo a la tierra:
+![Snap 55 plantilla SPA](/imagenes-readme/captura58.JPG)
+
+Hasta aquí he llegado, mañana continuaré ajustando el diseño para todos los dispositivos.
+
+See you tommorrow!
+
 ## Reto de programación, día 36/100.
 
 Tras un par de tazas de café, empiezo este Miercoles lleno de energía para afrontar el reto de hoy.
