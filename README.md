@@ -1,5 +1,50 @@
 # 100 days coding challenge
 
+## Reto de programación, día 36/100.
+
+Tras un par de tazas de café, empiezo este Miercoles lleno de energía para afrontar el reto de hoy.
+
+Hoy crearé una página que reciba los params, y llame a la API de la NASA. Para hacer el mockup, he descargado directamente los datos de todos los asteroides en un data. Considerando que varios asteroides tenían el formato equivocado, he tenido que modificar los datos, por lo que tendré que crear varias reglas para cuando los datos provengan de la API directamente. 
+
+Primero empiezo con los params. En nuxt, las rutas se autoconfiguran y puedes seleccionar un param de esta forma: [nobreparam].vue. En mi caso, quiero ordenar por descripción, así que he llamado a mi archivo [des].vue. A partir de chequear si funciona o no, he descubierto varios errores que tendré que solventar antes de continuar. Por un lado la animación solo se carga en el index, y está integrada en el código, por lo que voy a separar los componentes para que pueda llamarlo desde otra pagina. Separados en componentes, he podido hacer que también aparezca la animación en la página de params. Ahora me gustaría hacer un botón de volver atrás para poder volver a la pagina inicial. El problema es que he configurado un botón para que quede más elegante a la hora de entrar en la pp, que despliega el contenido. Cuando estoy volviendo desde una pagina de params, no me interesa que el estado de index sea el inicial. De hecho, me interesa que si ha realizado algun filtro, se reestablezca y me bypasee el botón para mostrar el contenido. 
+
+En vue, puedes emitir un evento personalizado y capturarlo en la página principal para saber si vienes de una página en concreto, pero el funcionamiento en la versión de Nuxt varía, por lo que después de varias horas con este problema, he decidido tomar una solución alternativa. Esta vez voy a crear varias variables en el localstorage. Aplicando una lógica básica, desde la pp detecta si la redirección ha sido inmediata por lo que bypasea el botón. He añadido un watcher para guardar los cambios de estado en otra variable de localStorage que luego setea, o usa a los filtros por defecto.
+
+De esta forma, una vez que el usuario clicke sobre el botón que vuelve al buscador, este detecta si es valido considerando el tiempo que ha pasado, y si lo es oculta el botón y muestra el contenido con los filtros que se habían realizado antes de entrar en la vista de un asteroide. En el caso que haya pasado tiempo suficiente, el comportamiento de la app es el normal, te muestra el botón que al clickarlo hace aparecer el contenido con los filtros por defecto.
+
+Ahora me gustaría empezar con el data fetching de la vista del asteroide. Para ello voy a utilizar simples funciones asincronas para traerme la data. 
+
+Tras realizar varias pruebas, puedo comprobar que la API no admite solicitudes CORS. Como no tengo control sobre la API, voy a intentar bypassear el bloqueo mediante una proxy api.
+
+He subido en mi github la API proxy que he creado con express. Ahora si realizo solicitudes a esta api, podré recibir los datos que necesito:
+
+![Snap 55 plantilla SPA](/imagenes-readme/captura55.JPG)
+
+Por hoy, ya está bien. Mañana fetchearé los datos y haré un primer diseño de la página donde se recibirán.
+
+Keep codding till your fingers bleed.
+
+## Reto de programación, día 35/100.
+
+Empiezo un dia nuevo con mucha ilusión. 
+
+Hoy tocará continuar con la página de objetos cercanos a la tierra. Primero de todo, me dedicaré a crear los filtros necesarios. Para ello he creado varios refs que me servirán para controlar las selecciones. 
+
+Después de un buen rato he conseguido filtrar y ordenar los datos como quería. He establecido valores por defecto para que no tenga que filtrarme todos los datos siempre, sino que los traiga en función de los filtros. 
+
+![Snap 53 plantilla SPA](/imagenes-readme/captura53.JPG)
+
+Adicionalmente, he añadido el filtro por nombre como podéis observar.
+
+Antes de ponerme a crear la página que recibirá params para tener la descripción detallada de todos los impactos, necesito poder paginar los resultados. Para ello voy a controlar con un ref la cantidad de resultados que el usuario quiera mostrar, y ajustaré la lógica en acorde. La intención es que se pueda desplazar por las paginas con un boton de anterior y otro de siguiente. Por otro lado, quiero calcular el total de páginas que tendría y que se ajusten todos los resultados dinamicamente. De forma que si buscas algo que tenga 400 resultados, puedas paginarlo a 25, 50, 75 o 100 resultados por pagina, y que automaticamente el sistema cree las paginas y detecte el numero maximo. 
+
+Después de varias horas, he podido ajustar todo lo dicho anteriormente:
+
+![Snap 53 plantilla SPA](/imagenes-readme/captura54.JPG)
+
+Después de un buen rato arreglando varios fallos que surgían en el proceso, lo dejo por hoy, con la aplicación filtrando y paginando correctamente.
+
+¡Mañana más!
 ## Reto de programación, día 34/100.
 
 Este fin de semana ha sido tranquilo con la mujer en casa. Aunque hay una noticia que despertó mi curiosidad, y me ha movido a empezar una idea nueva.
