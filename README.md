@@ -1,4 +1,25 @@
 # 100 days coding challenge
+## Reto de programación, día 38/100.
+
+Otro viernes más, otra semana a punto de acabar.
+
+Hoy tengo intención de avanzar con el responsive de la web de los objetos próximos a la tierra.
+
+Empezaremos ajustando la página principal. Quiero evitar todo lo posible añadir un acordeón de media queries, por lo que solo utilizaré un breakdown point y el resto lo ajustaré con tamaños relativos. Creo que la página quedará mejor si cuando se muestra la versión de tablet o movil, las imagenes de los asteroides desaparecen para poder ajustar el contenido al centro, sin tener que poner un tamaño de letra que dificulte la lectura para que quepa todo todo en pantalla. Así que por ello empezamos. Por otro lado, vamos a ajustar el tamaño máximo a 100vw y modificar el radius para que se el borde exterior sea cuadrado. 
+
+Después de varios ajustes, he desplegado la aplicación web para testear las vistas en el teléfono, y así ha quedado el resultado:
+
+
+Ahora continuo con la página de detalles de cada asteroide. Aquí voy a tener que realizar varios cambios. Voy a sustituir el grid por una flexbox teniendo en cuenta como estaba montado el componente previamente. 
+
+Para la versión de móvil, quiero ajustar la caja para que se pueda desplazar por ella manteniendo las proporciones. 
+
+Una vez acabada la mitad de la página, debo dejarlo aquí por hoy. En una hora tengo una reunión para una nueva aplicación, por lo que quiero dejar el resto del día para avanzar con el planteamiento, y presupuesto de la misma.
+
+El lunes más, y mejor.
+
+Keep coding!!
+
 
 ## Reto de programación, día 37/100.
 
