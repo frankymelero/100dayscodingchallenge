@@ -9,6 +9,9 @@ Empezaremos ajustando la página principal. Quiero evitar todo lo posible añadi
 
 Después de varios ajustes, he desplegado la aplicación web para testear las vistas en el teléfono, y así ha quedado el resultado:
 
+![Snap 60 plantilla SPA](/imagenes-readme/captura60.JPG)
+
+![Snap 59 plantilla SPA](/imagenes-readme/captura59.JPG)
 
 Ahora continuo con la página de detalles de cada asteroide. Aquí voy a tener que realizar varios cambios. Voy a sustituir el grid por una flexbox teniendo en cuenta como estaba montado el componente previamente. 
 
