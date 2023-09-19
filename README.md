@@ -1,4 +1,29 @@
 # 100 days coding challenge
+
+## Reto de programación, día 39/100.
+
+Tras un fin de semana de descanso, continuamos con las pilas cargadas.
+
+Hoy tocará dejar listo el responsive de todo lo que quedaba pendiente. El otro día modifiqué el contendor de datos de la vista de un asteroide. Ahora carga los divs en función del tamaño de la pantalla. He editado varias partes, porque creo conveniente dejar un pequeño scroll horizontal para navegar entre el contenido de una forma más limpia. 
+
+He de considerar que todo el contenido debe caber en una sola página debido a que el fondo es la animación threejs y tengo menos margen para ajustar su tamaño. 
+
+Una vez arreglada la parte de los datos, me toca empezar a modificar el tamaño de la tabla. En un inicio, tenía pensado hacer lo mismo que con los datos, es decir, ajustar el div para que haga scroll, pero en este caso lo veo demasiado poco intuitivo ya que el scroll funcionaría para todas las direcciones. He probado una solución alternativa, donde no indico un tamaño minimo de las celdas, y tras ajustar el font-size ha quedado bien encajado todo en pantalla. He dejado un scroll vertical para poder navegar entre los posibles impactos, pero ahora, sin tener que hacer también scroll horizontal.
+
+Una vez listo, voy a empezar a realizar varios retoques en ambas páginas para afilar mejor el diseño. He hecho pequeñas variaciones que mejoran la calidad del producto.
+
+A continuación podréis ver como ha quedado la página una vez el responsive ya ha sido aplicado:
+
+![Snap 61 plantilla SPA](/imagenes-readme/captura61.JPG)
+
+Todavía tengo que hacer más pruebas para corregir posibles errores que puedan ocurrir, así que me lo dejo apuntado para poder meterle mano en el futuro. Hasta hora, tengo 3 tareas pendientes de las páginas que he ido haciendo. A partir de mañana, me dedicaré a realizar estas correcciones antes de empezar un nuevo proyecto.
+
+Una vez tenga estos ajustes, mi intención es continuar creando una API de sudokus para que cualquier desarrollador pueda crear un sistema para jugar al sudoku con los datos de mi futura API. Por otro lado, tengo otro proyecto en mente que puede estar muy chulo, del cual ya tengo las bases creadas de cuando estuve haciendo prácticas en Blue Goat Labs. Este nuevo proyecto, implicará Nodejs, React, algún plugin para gestionar excels y la API de chat GPT. Me gustaría crear una página donde después de subirle un excel de palabras claves, mediante Node genere una plantilla HTML optimizada para el SEO con contenido escrito por la IA. 
+
+Pero vamos paso por paso, de momento mañana vamos con los detalles pendientes de las páginas que he ido haciendo en el reto.
+
+¡¡Seguimos!!
+
 ## Reto de programación, día 38/100.
 
 Otro viernes más, otra semana a punto de acabar.
