@@ -15,12 +15,12 @@
                             <div class="form-row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control bg-transparent p-4" placeholder="Your Name" required="required" />
+                                        <input type="text" class="form-control bg-transparent p-4" placeholder="Your Name" required />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control bg-transparent p-4" placeholder="Your Email" required="required" />
+                                        <input type="email" class="form-control bg-transparent p-4" placeholder="Your Email" required />
                                     </div>
                                 </div>
                             </div>
