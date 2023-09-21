@@ -4,7 +4,7 @@
 
 [Mi Portfolio](https://fmelero.dev/)
 
-[Plantilla Spa](https://spa-plantilla-nuxt.vercel.app/)
+[Plantilla Spa](https://nuxt-spa-template.vercel.app/)
 
 [Objetos Próximos a la Tierra](https://objetos-proximos-a-la-tierra.vercel.app/)
 
