@@ -1,5 +1,14 @@
 # 100 days coding challenge
 
+### Proyectos creados hasta hora en el reto
+
+[Mi Portfolio](https://fmelero.dev/)
+
+[Plantilla Spa](https://spa-plantilla-nuxt.vercel.app/)
+
+[Objetos Próximos a la Tierra](https://objetos-proximos-a-la-tierra.vercel.app/)
+
+
 ## Reto de programación, día 41/100.
 
 Como siempre, un buen café es la mejor forma de empezar el día. Eso sí, hoy tampoco había leche de vaca, así que me conformaré con un café con leche de arroz.
