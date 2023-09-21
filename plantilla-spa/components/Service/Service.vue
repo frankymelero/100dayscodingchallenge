@@ -48,7 +48,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                   
-                                  <select v-model="selectedTime" class="custom-select bg-transparent px-4" id="appointment-time" style="height: 47px;">
+                                  <select v-model="selectedTime" @change=selectHour class="custom-select bg-transparent px-4" id="appointment-time" style="height: 47px;">
                                     
                                   <option value="">Choose an hour</option>
                                    <option v-for="time in availableTimes" :key="time">{{ time }}</option>
@@ -59,9 +59,9 @@
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <select v-model="formData.selectedservice" class="custom-select bg-transparent px-4" style="height: 47px;">
+                                    <select v-model="formData.selectedservice" class="custom-select bg-transparent px-4" id="services-select" style="height: 47px;">
                                         <option value="-1">Select A Service</option>
-                                        <option v-for="service in services" :key="service.id" :value="service.id">{{ service.title+" ("+service.duration}}minutes) </option>
+                                        <option v-for="service in availableServices" :key="service.id" :value="service.id">{{ service.title + " (" + service.duration }} minutes)</option>
                                     </select>
                                 </div>
                             </div>
@@ -78,6 +78,8 @@
 </template>
 
 <script setup>
+import { faBatteryEmpty } from '@fortawesome/free-solid-svg-icons';
+
 const services = [
   {
     id: 0,
@@ -138,7 +140,15 @@ const apidatamock = [
     hour: "11:00",
     duration: 45,
     serviceId: 1
+  },
+  {
+    reservationId: "d226a6ss",
+    date: "2023-09-21",
+    hour: "18:30",
+    duration: 30,
+    serviceId: 2
   }
+
 
 ];
 
@@ -146,7 +156,8 @@ const openedHours = ref({
   // UTC time. Adjust according your needs. Note that this is made to consider Winter/summer hours, therefore use gmt hours and you won't need to change this.
   starting: '08:00',
   finishing: '19:00',
-  minuterange: 15
+  minuterange: 15,
+  maxservicetime: 60,
 })
 
 const formData = ref({
@@ -155,17 +166,22 @@ const formData = ref({
   date: '',
   time: '',
   selectedservice: '-1',
+  selectedserviceId: '-1',
 });
 
 
 const selectedTime = ref('');
 
-
+const calculatedValue = ref(0);
 
 const availableTimes = ref([]);
 
+const availableServices = ref([]);
+
 // Esta función calcula los tiempos disponibles
 const calculateAvailableTimes = () => {
+
+
   const times = [];
   const today = new Date();
   const todaydate = today.getDate();
@@ -185,7 +201,13 @@ const calculateAvailableTimes = () => {
   let currentMinutes;
 
   if (formData.value.date === formattedday) {
-    currentMinutes = timeToMinutes(formattedTime) + 120; 
+    if(timeToMinutes(formattedTime) >= timeToMinutes(openedHours.value.starting)){
+      currentMinutes = timeToMinutes(formattedTime) + 120; 
+    }else{
+      currentMinutes =  timeToMinutes(openedHours.value.starting);
+    }
+
+   
   } else {
     currentMinutes = timeToMinutes(openedHours.value.starting);
   }
@@ -201,6 +223,9 @@ const calculateAvailableTimes = () => {
 
 
   while (currentMinutes <= timeToMinutes(openedHours.value.finishing)) {
+    if(currentMinutes === timeToMinutes(openedHours.value.finishing)){
+      break;
+    }
     let durationFound = null;
 
  
@@ -219,24 +244,29 @@ const calculateAvailableTimes = () => {
     if (isReserved) {
       currentMinutes += durationFound;
     } else {
+      
       times.push(minutesToTime(currentMinutes));
       currentMinutes += openedHours.value.minuterange;
     }
   }
 
+  selectHour();
   availableTimes.value = times; // Actualiza el valor de availableTimes
+ 
 };
 
 // Observa el cambio en formData.date y llama a la función para calcular los tiempos disponibles
 watch(() => formData.value.date, (newDate, oldDate) => {
   // Ejecuta availableTimes cuando formData.date cambia
   calculateAvailableTimes();
-
+  selectedTime.value = '';
+  document.querySelector('#appointment-time').value = -1;
 });
 
 // Llama a calculateAvailableTimes una vez al inicio para la fecha inicial
 onMounted(() => {
   calculateAvailableTimes();
+
 });
 
 
@@ -272,6 +302,53 @@ const maxDateValue = computed(() => {
   const day = String(maxDate.getDate()).padStart(2, '0');
   return `${year}-${month}-${day}`;
 });
+
+const selectHour = () => {
+selectedTime.value = selectedTime.value;
+calculatedValue.value = getSelectedHourTimeToNextReservation (availableTimes.value, selectedTime.value)
+
+const filteredServices = services.filter(service => service.duration <= calculatedValue.value);
+
+  availableServices.value = filteredServices
+
+
+console.log(availableTimes.value)
+getLastAppointments(openedHours.value.maxservicetime, openedHours.value.minuterange);
+}
+
+ const getSelectedHourTimeToNextReservation = (times, timeValue) => {
+ let counter = 0;
+const mapped = times.map((time) => {
+return timeToMinutes(time);
+});
+const ratio = 4;
+const lastAppointments = mapped.slice(-ratio);
+const lastAppointment = mapped.slice(-1);
+console.log("ratio",lastAppointment);
+
+
+for(let i = timeToMinutes(timeValue); i <= mapped[mapped.length - 1]; i+=openedHours.value.minuterange){
+  if (mapped.includes(i) && !lastAppointments.includes(i)) {
+      counter += 15;
+      continue;
+    }
+    else if(mapped.includes(i) && lastAppointments.includes(i)){
+      counter += 15;
+       continue;
+    }
+    break;
+  }
+return counter;
+ };
+
+ const getLastAppointments = (max, min) => {
+availableTimes.value
+
+  return;
+
+ }
+
+ 
 </script>
 
 

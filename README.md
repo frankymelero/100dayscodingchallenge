@@ -1,5 +1,60 @@
 # 100 days coding challenge
 
+## Reto de programación, día 41/100.
+
+Como siempre, un buen café es la mejor forma de empezar el día. Eso sí, hoy tampoco había leche de vaca, así que me conformaré con un café con leche de arroz.
+
+Hoy tengo intención de dejar casi acabado el front-end, de manera que solo quede el fetching de datos reales, y no con un mockup.
+
+Ayer avanzamos bastante con la funcionalidad de las reservas. Ahora es necesario que en función del tiempo que haya hasta la siguiente reserva, se pueda seleccionar un servicio u otro.
+
+Para ello voy a crear una función que recogerá dos parametros, y devuelva un numero multiple de 15. En concreto es 15, porque lo he seteado previamente en el tiempo minimo entre citas. Por lo que en función de lo seleccionado, se hará el calculo de una forma u otra. De hecho, toda la funcionalidad la he creado para que tenga en cuenta estos settings. Si se quiere cambiar el rango de horas, o el rango del tiempo minimo entre citas no habrá problema en el futuro.
+
+Una vez hecha la funcion, y tras algunos cambios ahora puedo filtrar los servicios en función del tiempo que haya hasta la próxima cita. Ahora toca limitar las horas, es decir, si a las 19 cierra, quiero que la ultima cita sea a las 18.45 y que me solo me permita escoger la cita de 15 minutos. Si la ultima cita es alas 18 porque ya están reservadas las demás, quiero que el comportamiento sea el mismo.
+
+Ahora ya funciona el sistema de calendario. Las horas las muestra en función si no están reservadas, y el tiempo de servicio a escoger lo calcula dependiendo del tiempo disponible. También limita el comportamiento del día de hoy para que empieze a partir de 1 hora desde el momento actual. Después de varias pruebas, el comportamiento del front-end ya es exactamente el que quiero, por lo que lo dejamos pendiente de añadir los datos de las citas desde la API. 
+
+Mi intención es realizar una cita, y que la misma no esté confirmada hasta que el usuario haya hecho click a un enlace que le llegará al email. Como ya he utilizado emailjs en la app, voy a continuar por el mismo camino y crear unas plantillas.
+
+Antes de enviar los datos, queremos validarlos más haya de la primera validación que hace el tipado de los inputs en html. Así que vamos con ello. Con una serie de expresiones regulares, ya aseguro que los datos enviados sean los correctos.
+
+Lo dejamos por hoy. Mañana ajustaré el backend, y conectaré todos los servicios para que la funcionalidad esté acabada.
+
+Keep coding till your fingers bleed :D
+## Reto de programación, día 40/100.
+
+Como se nota que va llegando el fresquito. Ya hacía falta.
+
+Antes que nada me gustaría compartir con vosotros la url del proyecto del buscador de objetos próximos a la tierra. Quién haya seguido este diario, podrá ver que se ha desarrollado integramente en el reto, por aquí la tenéis:
+
+https://objetos-proximos-a-la-tierra.vercel.app/
+
+Hoy tengo intención de empezar el sistema de reservas de la página del SPA. El sistema que estaba creado de antemano, no tiene en cuenta muchas cosas que me gustaría solucionar con mi sistema propio. Ya hice el back-end para el sistema, aunque habrá que realizar algunos cambios puesto que tengo intención de aumentar la complejidad de la funcionalidad.
+
+Mi idea es que desde el front-end filtre las horas y los días, y que desde el back-end tan solo gestione las citas confirmadas y por confirmar. De momento haré un mockup rápido con un json para dejar perfilado el front-end, y luego haré las adecuaciones necesarias para ajustar el back-end. 
+
+Empezamos modificando todos los datos de serie, he añadido un select para las horas y modificado el input a type. Una vez configurado el prevent default y un ref con los datos del formulario, así queda la página:
+
+![Snap 62 plantilla SPA](/imagenes-readme/captura62.JPG)
+
+Ahora he creado otro objeto que contendrá varios datos que se modificarán en función del negocio. En concreto, he añadido la hora de apertura, la hora de cierre, la hora que durará el servicio máximo, y en cuanto tiempo se dividirán las citas. Después he modificado el objeto de los servicios para añadirle un tiempo standard para cada servicio y una id.
+
+Ahora voy a limitar la seleccion de dias a 3 meses desde la fecha. Por supuesto también no permito la selección de días anteriores. Ahora para manejar las fechas, voy a crear dos funciones. Una que convierta la fecha a minutos desde las 00.00. Y el otro que convierta los minutos a una fecha de dia/mes. 
+
+Continuamos creando una función que crea todos los rangos de horas. Ahora todas las horas que aparecen, se dividen en el rango seleccionado y las horas van desde la hora inicial seleccionada hasta la última hora seleccionada. 
+
+A continuación me dispongo a crear un objeto json que imite la respuesta de la API con los datos de la reserva. He creado un bucle que itera todas las horas y añade en una nueva array solo las horas que no están reservadas.
+
+Ahora ya puedo dejar de ver las citas que están seleccionadas, pero no están enlazadas con el día.
+
+Una vez enlazadas, en función del día guardado en la cita, ahora desaparecen las horas reservadas en cada día en concreto. 
+
+Antes de dejarlo por hoy, limitaré las citas seleccionadas para el dia de hoy. De forma que las horas empiecen al menos 1 hora después de la hora actual. Para que no puedas reservar algo de aquí 10 minutos, sino que minimo debe reservarse con 1 hora de antelación.
+
+Una vez hecho esto, lo dejamos por hoy. Mañana continuaremos limitando los servicios en función del tiempo disponible.
+
+Coding is life.
+
 ## Reto de programación, día 39/100.
 
 Tras un fin de semana de descanso, continuamos con las pilas cargadas.
