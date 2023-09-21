@@ -14,9 +14,15 @@ Una vez hecha la funcion, y tras algunos cambios ahora puedo filtrar los servici
 
 Ahora ya funciona el sistema de calendario. Las horas las muestra en función si no están reservadas, y el tiempo de servicio a escoger lo calcula dependiendo del tiempo disponible. También limita el comportamiento del día de hoy para que empieze a partir de 1 hora desde el momento actual. Después de varias pruebas, el comportamiento del front-end ya es exactamente el que quiero, por lo que lo dejamos pendiente de añadir los datos de las citas desde la API. 
 
-Mi intención es realizar una cita, y que la misma no esté confirmada hasta que el usuario haya hecho click a un enlace que le llegará al email. Como ya he utilizado emailjs en la app, voy a continuar por el mismo camino y crear unas plantillas.
+Si la hora de cierre es a las 19:
 
-Antes de enviar los datos, queremos validarlos más haya de la primera validación que hace el tipado de los inputs en html. Así que vamos con ello. Con una serie de expresiones regulares, ya aseguro que los datos enviados sean los correctos.
+![Snap 62 plantilla SPA](/imagenes-readme/captura63.JPG)
+
+![Snap 62 plantilla SPA](/imagenes-readme/captura64.JPG) 
+
+Antes de enviar los datos, queremos validarlos más haya de la primera validación que hace el tipado de los inputs en html. Así que vamos con ello. Con una serie de expresiones regulares, ya aseguro que los datos enviados sean los correctos. 
+
+Mi intención es realizar una cita, y que la misma no esté confirmada hasta que el usuario haya hecho click a un enlace que le llegará al email. Como ya he utilizado emailjs en la app, voy a continuar por el mismo camino y crear unas plantillas.
 
 Lo dejamos por hoy. Mañana ajustaré el backend, y conectaré todos los servicios para que la funcionalidad esté acabada.
 
