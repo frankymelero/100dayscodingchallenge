@@ -8,6 +8,82 @@
 
 [Objetos Próximos a la Tierra](https://objetos-proximos-a-la-tierra.vercel.app/)
 
+## Reto de programación, día 42/100.
+
+Y llego el día de ponernos con una parte que me encanta, el back-end. 
+
+Hoy no os escribo antes de empezar, sino después de haber realizado todo el trabajo. Ya es casi media noche, y spoiler, acabo de finalizar el back-end y la integración con el front de manera local, a falta de unificar las urls en variables de entorno para cuando haga el deploy.
+
+Por la mañana después del café empecé a trabajar con la API. Hace unos días creé un CRUD con express, postgreSQL y sequelize, así qué lo utilice de base para los appointments. Antes de empezar a escribir una linea, he planeado cual es el ciclo que el usuario debe seguir hasta crear una cita. Llegué a la conclusión que con cuantro end-points podría sacar una version minima del producto. 
+
+![Snap 66 plantilla SPA](/imagenes-readme/captura66.JPG)
+
+Como es una plantilla, no he creido conveniente conectar un calendario como google calendar para poder ver todas las citas, aunque si fuera un cliente real seria una opción muy adecuada para gestionar y controlar las citas. De la misma manera que habría que securizar algún end point para poder eliminar citas de forma externa. 
+
+Primero realicé la petición get, asociada con la raíz en la ruta. Mi intención es que devolviera los datos, pero debían ser identicos a los del mockup, ya que no quería que desde fuera se pudiera acceder a datos sensibles. Creé una regla para que mostrara solo los validados, y devolviera solo los datos que no eran sensibles. Al principio tenía planteado encriptar el id de cada cita, pero como tampoco permito acceder a ningún dato por id, lo dejé como entero.
+
+A continuación venía el POST. La particularidad de este caso es que debía poner el campo validated siempre en false al realizar la llamada post. De esta forma, nunca se podrá validar el usuario de primeras. Aunque limite esto en el frontend, alguien podría hacer una llamada post y poner validated: true. En otro contexto, habría que limitar el e-mail registrado para que pudiera haber x cantidad de citas por e-mail, pero en este caso dada la naturaleza del proyecto voy a estar recibiendo emails solo yo, por lo que solo me perjudicaría para el desarrollo :D 
+
+Vamos con el delete. Este caso es sencillo, busca si hay algun usuario con el token indicado, si lo hay lo elimina, sino devuelve un deleted false.
+
+Finalmente el ultimo end point lo utilizo para hacer la validación de la cita en el caso que cumpla la condición, y modifica el validated a true.
+
+Una vez testeada, la API está lista para conectarla al front-end. Realicé varios cambios en el front-end para adecuarla. Por un lado, quiero que cuando el usuario se registre le envíe un e-mail con el enlace de confirmación y cancelación de la cita. Para cada servicio, he creado una página que recoge params para hacer las peticiones desde el front-end. Y en función de la respuesta mostrar al usuario un resultado. Tras implementar toda la lógica en cada una de las páginas, es hora de recoger los datos de la API para bloquear las citas. Para ello simplemente he implementado una funcion asyncrona que convierte el json a una objeto js tal y como estaba en el mock. 
+
+Después de realizar varias pruebas, puedo concluir que la feature está funcionando tal y como esperaba de forma local.
+
+Voy a hacer screenshots del proceso:
+
+Digamos que un tal Franky Melero quiere reservar una cita para el miercoles a las 08 con un servicio que se llama stream bath que dura una hora.
+
+
+![Snap 66 plantilla SPA](/imagenes-readme/captura67.JPG)
+
+Voy a forzar datos invalidos para ver cual es el resultado al darle submit. Cambiando Franky Melero por franky Melero 2 por ejemplo.
+
+![Snap 66 plantilla SPA](/imagenes-readme/captura68.JPG)
+
+El resultado es que la validación funciona correctamente. Si probamos la fecha o un e-mail incorrecto, el propio validador de html nos saltará. 
+
+Ahora vamos a registrar una nueva cita con los datos de la primera captura, este es el resultado:
+
+![Snap 66 plantilla SPA](/imagenes-readme/captura69.JPG)
+
+Como no ha dado ningún error, muestra el mensaje de confirmación y acto seguido comprobamos nuestra bandeja de entrada. Hemos recibido el siguiente e-mail:
+
+![Snap 70 plantilla SPA](/imagenes-readme/captura70.JPG)
+
+Cuando clico en el enlace de confirmación:
+
+![Snap 70 plantilla SPA](/imagenes-readme/captura71.JPG)
+
+Si clicara por segunda vez o recargara la página:
+
+![Snap 70 plantilla SPA](/imagenes-readme/captura72.JPG)
+
+Ahora una vez está confirmada la cita, vamos a chequear si se ha reservado correctamente, por lo que la primera cita el día 27/09 que deberíamos poder seleccionar es a las 09, ya que la cita de 08 a 09 la acabamos de reservar.
+
+![Snap 70 plantilla SPA](/imagenes-readme/captura73.JPG)
+
+Efectivamente, funciona sin problema ya que ha dejado de aparecer la cita disponible.
+
+Ahora voy a cancelar la cita desde el enlace.
+
+![Snap 70 plantilla SPA](/imagenes-readme/captura74.JPG)
+
+Si recargo la página de la cancelación, o vuelvo a clicar en el enlace desde el email:
+
+![Snap 70 plantilla SPA](/imagenes-readme/captura75.JPG)
+
+Como podéis ver, si ya ha borrado la cita con anterioridad, o la cita no existe, nos devolverá not found.
+
+Ahora volvemos a la página de reservas. Como podéis ver, ya vuelve a estar la cita disponible puesto que la hemos cancelado:
+
+![Snap 70 plantilla SPA](/imagenes-readme/captura76.JPG)
+
+Hasta aquí he llegado por hoy, tan solo quedará desplegar la API y modificar rutas del front-end.
+
+¡Seguimos para bingo!
 
 ## Reto de programación, día 41/100.
 
@@ -33,7 +109,7 @@ Antes de enviar los datos, queremos validarlos más haya de la primera validaci�
 
 Mi intención es realizar una cita, y que la misma no esté confirmada hasta que el usuario haya hecho click a un enlace que le llegará al email. Como ya he utilizado emailjs en la app, voy a continuar por el mismo camino y crear unas plantillas.
 
-Lo dejamos por hoy. Mañana ajustaré el backend, y conectaré todos los servicios para que la funcionalidad esté acabada.
+Lo dejamos por hoy. Mañana ajustaré el backend, y conectaré todos los servicios para que la funcionalidad esté acabada en local.
 
 Keep coding till your fingers bleed :D
 ## Reto de programación, día 40/100.
