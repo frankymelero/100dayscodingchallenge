@@ -8,6 +8,87 @@
 
 [Objetos Próximos a la Tierra](https://objetos-proximos-a-la-tierra.vercel.app/)
 
+## Reto de programación, día 43/100.
+
+Ya acaba la semana. Hoy es Viernes, y a pesar que tengo menos tiempo que normalmente voy a acabar de desplegar la aplicación en vercel.
+
+Tal y como dejamos configurado ayer el servidor, funcionaba perfectamente si lo ejecutabamos desde local, accediendo a una base de datos PG local. Pero como es lógico, si desplegaramos la misma API en un vercel por ejemplo, ahora mismo no funcionaría. Voy a ir paso a paso explicando como conseguiré subir la API en Vercel con el nuevo feature de base de dats de pg que viene incorporado. Recuerdo que esta API está hecha con node.js usando librerias como express y sequelize. 
+
+Antes que nada, lo primero que haré es desplegar la API tal y como está. Si, habéis leido bien, la desplegaré para que no funcione pero tengamos el entorno ya preparado para solucionarlo. Para ello, creo un nuevo proyecto en vercel seleccionado el repositorio donde tengo la API. Ahora mismo, es imposible que funcione, ya no porque esté apuntando a una base de datos inexstente, sino para que haga el build correcto debemos añadir un archivo vercel.json en el proyecto. Voy a utilizar el mismo archivo que había previamente configurado para otras APIS, que queda de la siguiente forma:
+
+<--- vercel.json --->
+``` JSON
+{
+    "version": 2,
+    "name": "socketing",
+    "builds": [
+      {
+        "src": "src/app.js", 
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "src/app.js" 
+      },
+      {
+        "src": "/(.*)",
+        "dest": "src/app.js" 
+      }
+    ]
+  }
+```
+Una vez configurado el vercel.json, voy a crear la base de datos. Esta vez utilizaré el propio servicio de serverless storage que te ofrece vercel, ya que puedes crear una bdd PostgreSql gratuitamente, y conectarla al proyecto con facilidad.
+
+Para evitar confusiones, desde el pgAdmin creo un script que hará una tabla exactamente igual que la que tengo en local, así nos aseguramos que funcione. Después de ejecutar el script en la consola interactiva de Vercel, ya tengo la tabla Appointments creada, con las columnas que deseo.
+
+Ahora tocará realizar la conexión desde Sequelize, ya que estoy utilizando este ORM para ello. Antiguamente, tenía un sequelize.js donde recogía los datos desde un config que llamaba a las variables de entorno del .env. Pero para este caso, no me va a hacer falta ya que Vercel te genera una variable de entorno automatica con la URL donde contiene toda la información de la conexión. Así que en lugar de utilizar el .config, voy a llamar a la process.env.POSTGRES_URL que es la variable de entorno creada por VERCEL para coenctar con el pg. 
+
+En la documentación, te recomiendan llamar a pg directamente, así que el .sequelize.js quedaría de una forma como esta:
+
+```JS
+const { Sequelize } = require('sequelize');
+
+const { config } = require('../config/config');
+const setupModels = require('./../db/models');
+require('dotenv').config();
+
+const pg = require('pg');
+
+const sequelize = new Sequelize(process.env.POSTGRES_URL, {
+    dialectModule: pg,
+    dialect: 'postgres',
+    dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false, 
+      },
+    },
+  });
+
+sequelize.sync();
+setupModels(sequelize);
+
+module.exports = sequelize;
+```
+
+Vercel me obliga utilizar SSL por lo que he tenido que configurarlo como veis arriba. Hay que tener en cuenta que cuando se despliegue la API detectara automaticamente el SSL, pero de todas formas hay que seleccionarlo como arriba descrito para que funcione correctamente.
+
+Ahora es hora de probar la API, para ello voy a guardar los cambios y realizar un push al main del repo que se desplegará. Tras unos segundos, puedo comprobar que efectivamente, la API se ha desplegado sin problema, y después de probar los endpoints con POSTMAN puedo confirmar que todo funciona como debería. 
+
+Es el momento de conectarlo con el front end, y desplegar de nuevo la aplicación frontend. Para ello simplemente he modificado las urls para que incluyan el nombre de dominio https://spa-template-backend-express.vercel.app/ 
+
+Et voilà, tras probar todas las funcionalidades, puedo confirmar que el proyecto en su conjunto ha sido desplegado satisfactoriamente. 
+
+Podéis acceder a él, y si queréis, podéis probar el sistema desde el enlace al inicio de este documento.
+
+Con el objetivo cumplido por hoy, dedicaré el resto de la tarde a investigar un poco más sobre los paquetes npm, ya que precisamente, ese será el siguiente proyecto, un paquete npm para poder generar una string que contenga el arbol de archivos del proyecto. Una vez acabado y publicado, el siguiente proyecto sería una API de Sudokus.
+
+Buen fin de semana, hasta el Lunes.
+
+Keep coding till your fingers bleed!
+
 ## Reto de programación, día 42/100.
 
 Y llego el día de ponernos con una parte que me encanta, el back-end. 
