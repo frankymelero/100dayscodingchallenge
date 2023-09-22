@@ -81,6 +81,8 @@ Ahora volvemos a la página de reservas. Como podéis ver, ya vuelve a estar la 
 
 ![Snap 70 plantilla SPA](/imagenes-readme/captura76.JPG)
 
+Para acabar, he limitado el submit de las citas de tal manera que una vez se ha realizado una cita, por mucho que se clique no volverá a enviar la petición.
+
 Hasta aquí he llegado por hoy, tan solo quedará desplegar la API y modificar rutas del front-end.
 
 ¡Seguimos para bingo!
