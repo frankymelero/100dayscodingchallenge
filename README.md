@@ -15,7 +15,7 @@ Empezamos una semana más con muchas ganas,
 Hoy voy a empezar a programar un paquete de NPM muy sencillito, que te permitirá generar el arbol del proyecto en el punto que desees, así como excluir las carpetas que no quieras mostrar en el arbol.
 
 Para comenzar, primero he determinado el formato del output que quiero:
-
+```
 ./ --> Carpeta de inicio.
 index.js
 src/
@@ -23,7 +23,7 @@ src/
   |--   |-- assets/
   |--   |--   |-- myfile.txt
   |--   |-- page.js
-
+```
 Cada vez que haya una carpeta quiero que lo indique con una /, y cuando haya un fichero quiero que muestre su extensión. Antes de tocar una linea de código, voy a crear la misma estructura de carpetas que aquí indico para realizar las pruebas. 
 
 De momento, lo unico que busco es la funcionalidad básica del script, una vez devuelva exactamente lo que busco, crearé la modularidad y convertiré la funcionalidad a typescript para poder transpilarlo tanto en ECMAscript como en commonjs para que el paquete se pueda utilizar en todo tipo de proyectos.
@@ -32,6 +32,7 @@ Empezamos con un simple main.js que leerá mediante fs la estructura de la carpe
 
 Después de varias pruebas, he conseguido que el script tenga el comportamiento que deseo. El output del script, se ve exactamente así:
 
+```
 ./
 main.js
 package.json
@@ -43,6 +44,7 @@ src/
   |--   |--   |-- myfile.txt
   |--   |-- page.js
   |--   |-- scondpage.js
+```
 
 He creado una array donde se podrán incorporar todas las carpetas que no desees que el script muestre en el output, de forma que la función recursiva no tendrá que iterar por cada uno de los archivos, solo iterara cuando el archivo no esté incluido en la array de archivos excluidos.
 
