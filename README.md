@@ -8,6 +8,48 @@
 
 [Objetos Próximos a la Tierra](https://objetos-proximos-a-la-tierra.vercel.app/)
 
+## Reto de programación, día 44/100.
+
+Empezamos una semana más con muchas ganas,
+
+Hoy voy a empezar a programar un paquete de NPM muy sencillito, que te permitirá generar el arbol del proyecto en el punto que desees, así como excluir las carpetas que no quieras mostrar en el arbol.
+
+Para comenzar, primero he determinado el formato del output que quiero:
+
+./ --> Carpeta de inicio.
+index.js
+src/
+  |-- pages/
+  |--   |-- assets/
+  |--   |--   |-- myfile.txt
+  |--   |-- page.js
+
+Cada vez que haya una carpeta quiero que lo indique con una /, y cuando haya un fichero quiero que muestre su extensión. Antes de tocar una linea de código, voy a crear la misma estructura de carpetas que aquí indico para realizar las pruebas. 
+
+De momento, lo unico que busco es la funcionalidad básica del script, una vez devuelva exactamente lo que busco, crearé la modularidad y convertiré la funcionalidad a typescript para poder transpilarlo tanto en ECMAscript como en commonjs para que el paquete se pueda utilizar en todo tipo de proyectos.
+
+Empezamos con un simple main.js que leerá mediante fs la estructura de la carpeta que le indique. Para ejecturalo en node no habrá problema, pero tendré que realizar algunos cambios para cuando quiera ejecutarlo en un entorno web. Fs tiene una función nativa que permite crear un array con todos las carpetas y archivos de la ruta que indiques. 
+
+Después de varias pruebas, he conseguido que el script tenga el comportamiento que deseo. El output del script, se ve exactamente así:
+
+./
+main.js
+package.json
+README.md
+src/
+  |-- components/
+  |-- pages/
+  |--   |-- assets/
+  |--   |--   |-- myfile.txt
+  |--   |-- page.js
+  |--   |-- scondpage.js
+
+He creado una array donde se podrán incorporar todas las carpetas que no desees que el script muestre en el output, de forma que la función recursiva no tendrá que iterar por cada uno de los archivos, solo iterara cuando el archivo no esté incluido en la array de archivos excluidos.
+
+Teniendo en cuenta que he conseguido el resultado esperado antes de lo previsto, voy a dedicar el resto de tarde a ampliar mi conocimiento sobre el resto de pasos que debo seguir para que el paquete sea seguro, y lo pueda publicar.
+
+¡Seguimos empujando!
+
 ## Reto de programación, día 43/100.
 
 Ya acaba la semana. Hoy es Viernes, y a pesar que tengo menos tiempo que normalmente voy a acabar de desplegar la aplicación en vercel.
