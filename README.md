@@ -8,6 +8,55 @@
 
 [Objetos Próximos a la Tierra](https://objetos-proximos-a-la-tierra.vercel.app/)
 
+[Npm package Dir tree logger for node](https://www.npmjs.com/package/dir-tree-logger)
+
+## Reto de programación, día 45/100.
+
+Ayer no pude continuar con el reto. Debido a un imprevisto, tuve que pasarme todo el día viajando, pero estoy de vuelta con ganas de acabar el paquete.
+
+Hace dos días dejamos el script más o menos funcional, pero no modular. Es hora de modificar el script para que se inicie cuando se llame a la función initialize. Mi intención es que cuando la llames incluyas el path que quieras rastrear, y un array con las carpetas que quieras omitir, en el caso que quieras omitir alguna.
+
+Realizados los cambios pertinentes, ahora todo el script se ejecuta cuando se llama a intialize. 
+
+Este fin de semana empecé a hacer varios cursos de TS. Me gustaría incorporar TypeScript de forma regular en mis proyectos, por lo que es la ocasión perfecta para aplicarlo. Mi idea inicial era que el paquete se pudiera utilizar tanto en EC6 como en commonjs, pero dándole varias vueltas he llegado a la conclusión que sería bastante inseguro hacerlo funcionar por parte del cliente sin tener que aumentar mucho la complejidad del script. ¿Quién querría dejar el arbol del proyecto expuesto al cliente? De momento, el paquete solo estará diseñado para commonjs.
+
+Es hora de instalar un linter para ts, y configurar ts en el proyecto. Tras añadirle algunas reglas básicas en el tsconfig voy a generar la transpilación en un archivo index.js dentro de la carpeta dist. Por otro lado, moveré el index.js actual a la carpeta src, y le cambiaré la extensión a ts. Una vez hecho, paso a añadir el tipado que quiero sobre el script anterior.
+
+Mi idea es que el paquete tenga un js pre-compilado, por lo que voy a añadir momentariamente un script que llame al compilador de ts. Una vez generado el archivo js, me dispongo a modificar el package.json para ajustarlo a lo que quiero. Mi intención es que cuando se llame al paquete, no se tenga que apuntar a una carpeta sino a la raiz del modulo que detectará donde está el index.js. Sino lo hiciera así, cuando requiriera el modulo en otra app deberia añadirle manualmente el path: 
+```javascript
+const tree = require('mimodulo/dist'); 
+```
+
+Como no es lo que quiero, ya he configurado el package.json en acorde. Ahora es momento de modificar el README y publicar el paquete en npm.
+
+Para probar el paquete, voy a crear una pequeña aplicación de node con archivos vacíos para ver si los detecta correctamente.
+
+Una vez instalado el paquete con npm i dir-tree-logger me dispongo a probar el paquete. Para ello utilizo la siguiente sintaxis:
+
+```javascript
+const tree = require('dir-tree-logger');
+
+tree.initialize("./", ['node_modules']);
+
+```
+
+Como podéis ver, quiero que el arbol del proyecto se inicie en la raíz del proyecto para testearlo que he creado. Por otro lado, quiero que omita el node_modules. Si quisiera omitir alguna carpeta en concreto, solo tengo que añadirla en la array. 
+
+Ejecuto el programa, et voilà:
+
+
+![Snap 77 plantilla SPA](/imagenes-readme/captura77.JPG)
+
+Podéis echarle un vistazo al paquete, así como a las instrucciones mediante el siguiente enlace:
+
+https://www.npmjs.com/package/dir-tree-logger
+
+Una vez hecho lo que me proponía, voy a continuar estudiando TS. 
+
+Hasta aquí he llegado, mañana empezaré mi primera API usando TS que contendrá cientos de sudokus distintos para que cualquier desarrollador pueda genera un sistema para jugar al sudoku.
+
+¡Hasta mañana!
+
 ## Reto de programación, día 44/100.
 
 Empezamos una semana más con muchas ganas,
@@ -26,7 +75,7 @@ src/
 ```
 Cada vez que haya una carpeta quiero que lo indique con una /, y cuando haya un fichero quiero que muestre su extensión. Antes de tocar una linea de código, voy a crear la misma estructura de carpetas que aquí indico para realizar las pruebas. 
 
-De momento, lo unico que busco es la funcionalidad básica del script, una vez devuelva exactamente lo que busco, crearé la modularidad y convertiré la funcionalidad a typescript para poder transpilarlo tanto en ECMAscript como en commonjs para que el paquete se pueda utilizar en todo tipo de proyectos.
+De momento, lo unico que busco es la funcionalidad básica del script, una vez devuelva exactamente lo que busco, crearé la modularidad y es posible que lo convierta a TS.
 
 Empezamos con un simple main.js que leerá mediante fs la estructura de la carpeta que le indique. Para ejecturalo en node no habrá problema, pero tendré que realizar algunos cambios para cuando quiera ejecutarlo en un entorno web. Fs tiene una función nativa que permite crear un array con todos las carpetas y archivos de la ruta que indiques. 
 
