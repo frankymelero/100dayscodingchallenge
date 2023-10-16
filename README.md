@@ -10,6 +10,93 @@
 
 [Npm package Dir tree logger for node](https://www.npmjs.com/package/dir-tree-logger)
 
+
+## Reto de programación, días 51/100 - 55/100.
+
+Otra semana más, esta vez tengo dos proyectos en mente para estas 12-25 horas de trabajo que podré invertir durante la semana.
+
+Los últimos días del reto, constaron en hacer una API de sudokus, pero claro, ahora mismo hay que añadir los sudokus a mano uno a uno, y eso no es lo que pretendo. 
+
+Para solucionar el problema, voy a crear otra aplicación que generará un sudoku, y lo añadirá mediante los endpoints creados. La intención es crear una aplicación aparte para poder llenar la API de sudokus con decenas de peticiones. Una vez acabada, añadiré 5 sudokus diarios mediante un cron job, habilitando un edpoint de la API que haga este trabajo.
+
+Para crear una automatización del proceso, voy a hacer uso de funciones asíncronas encadenadas. Actualmente hay una API que genera sudokus desde 0, pero tiene bastantes limitaciones a la hora de generarlos. Voy a hacer uso de esta API, convertir los datos recibidos, solicitar acceso al JWT, para finalmente registrar el sudoku si no existe ya uno identico en la bbdd.
+
+El resultado es el siguiente:
+
+![Snap 79 plantilla SPA](/imagenes-readme/captura79.JPG)
+
+Como podéis ver, genera sudokus con intervalo de tiempo óptimo para que no deniegue las peticiones. El resultado solo se muestra si se ha recibido la data, y el flujo del código ha acabado como lo esperado. Esto se itera hasta el número de veces que desee.
+
+Una vez solucionado el problema de tener que estar generando los sudokus a mano, voy a crear un endpoint para que haga esta funcionalidad. Eso si, voy a hacer las peticiones más rápido, y las limitaré a 5. He realizado varias pruebas, y puedo decir que funciona perfectamente en menos del tiempo máximo que da Vercel para los trabajos cron. 
+
+Después de modificar el script para hacerlo servir tan solo 5 veces, y quitar la limitación ya que el sistema te permite 5 peticiones sin restricciones, el cronjob funciona perfectamente. Cada día a las 00.30 se añaden 5 sudokus de forma automática.
+
+Podéis ver el resultado en:
+
+https://github.com/frankymelero/auto-sudoku-bot
+
+El miércoles por la tarde, ya tenía listas las herramientas, por lo que he dedicado el resto de la semana a empezar un nuevo proyecto. 
+
+Esta vez voy a utilizar la IA para generar cartas de presentación que tengan en cuenta el CV del trabajador, y la oferta de trabajo. Esta pequeña app, devolverá el resultado en 5 idiomas en función de la selección. 
+
+Para ello voy a crear un diseño básico, y poco a poco le iré añadiendo las funcionalidades. He decidido utilizar una paleta de color que me gustó, y voy a hacer un diseño utilizando vectores que simulan olas para hacer algo más divertida la página. 
+
+Una vez creado el esqueleto, voy a añadir el sistema que lea archivos pdf para poder utilizar ese texto en un prompt para la IA. Por otro lado voy a crear el textarea para pegar la oferta de trabajo, y dos selects: uno de selección de idioma, y otro para establecer un numero de palabras máximas de la respuesta.
+
+Tras haber acabado el primer diseño, y la funcionalidad de leer el texto del pdf, es hora de crear las funcionalidad que se conectará con la IA. Considerando que la respuesta va a tardar, voy a crear un overlay que indique al usuario que se está generando la respuesta mientras espera. 
+
+Finalmente, y tras varios ajustes, el resultado es el siguiente:
+
+![Snap 80](/imagenes-readme/captura80.JPG)
+
+![Snap 81](/imagenes-readme/captura81.JPG)
+
+Tras ponerle unos datos de una oferta random, y subir mi CV, se activa el overlay:
+
+![Snap 82](/imagenes-readme/captura82.JPG)
+
+Tras unos segundos, el resultado es el siguiente:
+
+![Snap 83](/imagenes-readme/captura83.JPG)
+
+Como es lógico, el resultado que te da es mejorable, y hay que editar las partes que no te interesen, pero por lo general es un buen punto de partida para realizar tu carta de presentación personalizada a una empresa en concreto.
+
+Considerando que cada cálculo me cuesta algo de dinero, no voy a publicar la página por aquí, pero si voy a compartir el código, que al final es bastante sencillo y genérico.
+
+https://github.com/frankymelero/ai-covering-letter
+
+Me quedará pendiente documentarlo, acabaré el README el lunes de la próxima semana.
+
+Keep coding till your fingers bleed!
+
+## Reto de programación, días 46/100 - 50/100.
+
+Durante los siguientes 20 días, voy a tener muy poco tiempo debido a qué he empezado un nuevo proyecto para una empresa de web3. Este proyecto va a requerir el 100% de mí jornada labral, por lo que las horas que puedo dedicarle al reto se limitan. A veces, hay que saber priorizar, y al final el resultado que quería con este reto, era mejorar, y lo voy a conseguir abarcando este nuevo proyecto.
+
+Para no sobresaturarme, he decidido dedicar 2 horas cada día a continuar con el reto, pero no voy a poder escribir mi progreso a diario hasta que no acabe el otro proyecto.
+
+Esta semana, como había planeado, he creado una API en TS para que otros programadores puedan utilizar los sudokus almacenados para crear sistemas para jugar a sudoku, aunque tengo la intención de utilizarla para crear otro proyecto con websockets, pero para ello todavia me quedan unas semanas.
+
+La API está construida en base de TS, express y mongoose como ORM para una db mongo. La aplicación consta de varios endpoints públicos, y privados. 
+
+La parte pública consta de endpoints que retornan sudokus: tanto un listado de todos los disponibles (con limitaciones), como los sudokus de x dificultad, o que te devuelva un sudoku random que puede ser tanto de una dificultad en concreto, o no. 
+
+La parte privada tiene un sistema de login, dónde te retornará un JWT para poder registrar un nuevo sudoku, editarlo o eliminarlo, que obviamente están protegidos por un middleware que comprueba la vericidad del token.
+
+En la routa raíz del proyecto, he cargado un html para mostrar al usuario final cuales son los endpoints, y que hace cada uno de ellos:
+
+
+![Snap 78 plantilla SPA](/imagenes-readme/captura78.JPG)
+
+El despliegue lo he realizado en Vercel, teniendo que hacer unas modificaciones para que todo funcionara correctamente. Vercel, no utiliza TS, sino que trabaja directamente en JS, por lo que he tenido que configurar un plugin que cada vez que actualice mi repo local, me buildee un dist donde contiene todo el código javascript transpilado desde TS. La base de datos, la he desplegado en atlas.
+
+Podéis empezar a utilizar la API desde el siguiente enlace:
+
+https://sudoku-api-ts.vercel.app/
+
+La semana que viene, continuaré con un problema relacionado con los sudokus, stay tunned.
+
+
 ## Reto de programación, día 45/100.
 
 Ayer no pude continuar con el reto. Debido a un imprevisto, tuve que pasarme todo el día viajando, pero estoy de vuelta con ganas de acabar el paquete.
